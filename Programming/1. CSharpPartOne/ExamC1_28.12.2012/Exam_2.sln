@@ -1,0 +1,44 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Express 2012 for Windows Desktop
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "1. Sevenland Numbers", "1. Sevenland Numbers\1. Sevenland Numbers.csproj", "{1768C6D0-8373-46D8-ADC4-227600AA014B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2. A_nacci", "2. A_nacci\2. A_nacci.csproj", "{3B8BD8EC-EB5F-4D2E-ABA2-7AF8DBB70F0C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "3. Excel Columns", "3. Excel Columns\3. Excel Columns.csproj", "{F67FE100-E29B-44DF-BF28-347544884695}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "4. Telerik Logo", "4. Telerik Logo\4. Telerik Logo.csproj", "{C928DF89-31B9-4D55-AD93-9B8575ED0B4D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "5. BitBall", "5. BitBall\5. BitBall.csproj", "{735FD830-6FFF-40E6-8824-24C71B860321}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1768C6D0-8373-46D8-ADC4-227600AA014B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1768C6D0-8373-46D8-ADC4-227600AA014B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1768C6D0-8373-46D8-ADC4-227600AA014B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1768C6D0-8373-46D8-ADC4-227600AA014B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3B8BD8EC-EB5F-4D2E-ABA2-7AF8DBB70F0C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B8BD8EC-EB5F-4D2E-ABA2-7AF8DBB70F0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B8BD8EC-EB5F-4D2E-ABA2-7AF8DBB70F0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B8BD8EC-EB5F-4D2E-ABA2-7AF8DBB70F0C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F67FE100-E29B-44DF-BF28-347544884695}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F67FE100-E29B-44DF-BF28-347544884695}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F67FE100-E29B-44DF-BF28-347544884695}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F67FE100-E29B-44DF-BF28-347544884695}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C928DF89-31B9-4D55-AD93-9B8575ED0B4D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C928DF89-31B9-4D55-AD93-9B8575ED0B4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C928DF89-31B9-4D55-AD93-9B8575ED0B4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C928DF89-31B9-4D55-AD93-9B8575ED0B4D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{735FD830-6FFF-40E6-8824-24C71B860321}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{735FD830-6FFF-40E6-8824-24C71B860321}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{735FD830-6FFF-40E6-8824-24C71B860321}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{735FD830-6FFF-40E6-8824-24C71B860321}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
