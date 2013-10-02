@@ -1,0 +1,44 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Express 2012 for Windows Desktop
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "5. Brackets", "5. Brackets\5. Brackets.csproj", "{7579B5C5-C65C-4DB5-A421-16708203D5C9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "3. Tubes", "3. Tubes\3. Tubes.csproj", "{C464A457-1EFB-4FBE-92D4-B0EBB516C492}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "4. 3DStars", "4. 3DStars\4. 3DStars.csproj", "{031C4061-D95D-43BD-9229-7804D2C8749F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2. SevenSegmentDisplay", "2. SevenSegmentDisplay\2. SevenSegmentDisplay.csproj", "{8835FB66-9827-4345-A474-05D3997FF85B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "1. PHPVariables", "1. PHPVariables\1. PHPVariables.csproj", "{69A132B6-21F1-46EF-97B6-2B9716E7E411}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7579B5C5-C65C-4DB5-A421-16708203D5C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7579B5C5-C65C-4DB5-A421-16708203D5C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7579B5C5-C65C-4DB5-A421-16708203D5C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7579B5C5-C65C-4DB5-A421-16708203D5C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C464A457-1EFB-4FBE-92D4-B0EBB516C492}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C464A457-1EFB-4FBE-92D4-B0EBB516C492}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C464A457-1EFB-4FBE-92D4-B0EBB516C492}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C464A457-1EFB-4FBE-92D4-B0EBB516C492}.Release|Any CPU.Build.0 = Release|Any CPU
+		{031C4061-D95D-43BD-9229-7804D2C8749F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{031C4061-D95D-43BD-9229-7804D2C8749F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{031C4061-D95D-43BD-9229-7804D2C8749F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{031C4061-D95D-43BD-9229-7804D2C8749F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8835FB66-9827-4345-A474-05D3997FF85B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8835FB66-9827-4345-A474-05D3997FF85B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8835FB66-9827-4345-A474-05D3997FF85B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8835FB66-9827-4345-A474-05D3997FF85B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{69A132B6-21F1-46EF-97B6-2B9716E7E411}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69A132B6-21F1-46EF-97B6-2B9716E7E411}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69A132B6-21F1-46EF-97B6-2B9716E7E411}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69A132B6-21F1-46EF-97B6-2B9716E7E411}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

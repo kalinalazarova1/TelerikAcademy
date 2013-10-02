@@ -1,0 +1,8 @@
+	   Help
+
+Line up 3 or more same color
+ball horizontally/vertically.
+Use down, up, left or right 
+arrows to move the cursor and
+key Enter to select a ball.
+
