@@ -20,7 +20,10 @@ namespace AcademyPopcorn
         public void ShootPlayerRacket()
         {
             //Task 13:
-            this.playerRacket.IsFired = true;
+            if (this.playerRacket is ShootingRacket)
+            {
+                this.playerRacket.IsFired = true;
+            }
         }
 
         public override void AddObject(GameObject obj) //overriding of this method is important for task 13 in order to get access to the fields of the current racket
