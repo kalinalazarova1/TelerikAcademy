@@ -97,7 +97,8 @@ namespace SoftwareAcademy
             output.AppendFormat("{0}: Name={1}", this.GetType().Name, this.Name);
             if (this.Teacher != null)
             {
-                output.AppendFormat("; {0}", this.Teacher.ToString().Remove(7,6));
+                output.AppendFormat("; Teacher={0}", this.Teacher.Name);
+                //output.AppendFormat("; {0}", this.Teacher.ToString().Remove(7,6));
             }
             if (this.Topics.Count != 0)
             {
@@ -266,14 +267,14 @@ namespace SoftwareAcademy
         private static string ReadInputCSharpCode()
         {
             StringBuilder result = new StringBuilder();
-            using(System.IO.StreamReader reader = new System.IO.StreamReader(@"../../test.txt"))
-            {
+            //using(System.IO.StreamReader reader = new System.IO.StreamReader(@"../../test.txt"))
+            //{
                 string line;
-                while ((line = reader.ReadLine()) != "")
+                while ((line = Console.ReadLine()) != "")
                 {
                     result.AppendLine(line);
                 }
-            }
+            //}
             return result.ToString();
         }
 
