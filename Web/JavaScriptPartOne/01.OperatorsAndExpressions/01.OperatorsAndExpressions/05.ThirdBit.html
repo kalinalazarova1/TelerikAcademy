@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Third Digit Check</title>
+    <link href="js-console.min.css" rel="stylesheet" />
+</head>
+<body>
+    <!--Write a boolean expression for finding if the bit 3 (counting from 0) of a given integer is 1 or 0.-->
+    <div id="js-console">
+        <label for="number-input">Input integer number and press Enter: </label>
+        <input type="text" id="number-input" onkeydown="OnEnterKeyPressed(event)" />
+        <br />
+    </div>
+    <script src="js-console.js"></script>
+    <script>
+        window.onload = function () {
+            document.getElementById("number-input").focus();
+        }
+
+        function ThirdBitCheck() {
+            var number = jsConsole.readInteger("input");
+            if (!number && number !== 0) {
+                jsConsole.writeLine("The entered number is not valid.");
+            }
+            else {
+                jsConsole.writeLine("The bit 3 of " + number + " is: " + ((number >> 3) & 1));
+            }
+        }
+
+        function OnEnterKeyPressed(event) {
+            if (event.keyCode == 13) {
+                ThirdBitCheck();
+            }
+        }
+    </script>
+</body>
+</html>

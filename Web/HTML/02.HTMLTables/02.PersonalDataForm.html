@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Personal Data</title>
+		<meta charset="utf-8"/>
+	</head>
+	<body>
+		<form method="get" action="submit.php">
+			<label for="name">Member name :</label>
+			<input type="text" name="name" id="name" required="required"/><strong>*req</strong><br/>
+			<label for="email">Email :</label>
+			<input type="email" name="email" id="email" required="required" pattern="^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$"/><strong>*req</strong><br/>
+			<label for="school">School :</label>
+			<input type="text" name="school" id="school" required="required"/><strong>*req</strong><br/>
+			<input type="image" src="submit.png" name="submitButton" alt="Submit button">
+		</form>
+	</body>
+</html>

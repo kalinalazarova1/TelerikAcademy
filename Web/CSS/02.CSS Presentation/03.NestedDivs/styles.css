@@ -1,0 +1,11 @@
+﻿div.hidden{
+    border: 1px solid red;
+}
+
+div {
+    float: left;
+    background: black;
+    border: 0;
+    border-radius: 40px;
+    width: 97%;
+}

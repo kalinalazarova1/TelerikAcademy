@@ -1,0 +1,20 @@
+body nav ul li {
+  display: inline-block;
+  border: 1px solid lightgray; }
+  body nav ul li label img {
+    width: 50px;
+    display: block; }
+body div {
+  border: 1px solid lightgray;
+  width: 150px;
+  height: 150px;
+  margin-left: 40px; }
+  body div input[type="radio"] {
+    display: none; }
+    body div input[type="radio"]:checked + img {
+      width: 150px;
+      display: block; }
+  body div img {
+    position: absolute;
+    display: none; }
+

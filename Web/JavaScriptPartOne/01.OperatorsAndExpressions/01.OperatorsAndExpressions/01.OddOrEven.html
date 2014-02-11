@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Odd or Even Number</title>
+    <link href="js-console.min.css" rel="stylesheet" />
+</head>
+<body>
+    <!--Write an expression that checks if given integer is odd or even.-->
+    <div id="js-console" >
+        <label for="number-input">Input integer number and press Enter: </label>
+        <input type="text" id="number-input" onkeydown="EnterKeyPressed(event)" />
+        <br />
+    </div>
+    <script src="js-console.js"></script>
+    <script>
+        window.onload = function() {
+            document.getElementById("number-input").focus();
+        }
+
+        function OddOrEven() {
+            var number = jsConsole.readInteger("input");
+            if (!number && number !== 0) {
+                jsConsole.writeLine("The entered number is not valid");
+            }
+            else {
+                jsConsole.writeLine("The number " + number + " is " + (number % 2 ? "odd" : "even") + ".");
+            }
+        }
+        
+        function EnterKeyPressed(event) {
+            if (event.keyCode == 13) {
+                OddOrEven();
+            }
+        }
+    </script>
+</body>
+</html>

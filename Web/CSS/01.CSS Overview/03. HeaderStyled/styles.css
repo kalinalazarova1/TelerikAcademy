@@ -1,0 +1,47 @@
+﻿body {
+    background-color : #a9a9a9;
+    font-family : serif;
+}
+
+h1 {
+    text-align : center;
+    color : #f7fbd3;
+}
+
+nav a {
+    color : #f7fbd3;
+    text-decoration : none;
+}
+
+nav ul {
+    list-style : none;
+}
+
+nav ul li{
+    text-align : center;
+}
+
+nav ul li:last-child a{
+    text-decoration : underline;
+}
+
+nav ul li:nth-child(2) a{
+    background-color : #d1d1d1;
+}
+
+article footer a{
+    text-decoration : none;
+    color : black;
+}
+
+body footer{
+    text-align : center;
+}
+
+article footer{
+    text-align : left;
+}
+
+article:nth-child(2){
+    display : none;
+}

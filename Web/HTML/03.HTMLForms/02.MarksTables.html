@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>MarksTable</title>
+		<style>
+			table, tr, td, th{
+				border-collapse: collapse;
+				border: 2px solid gray;
+				border-style: inset;
+				padding: 5px;
+			}
+			
+			input{
+				border: 1px solid gray;
+				border-radius: 3px;
+				background: rgb(242,242,242); /* Old browsers */
+				background: -moz-linear-gradient(top,  rgba(242,242,242,1) 1%, rgba(235,235,235,1) 49%, rgba(225,225,225,1) 52%, rgba(212,212,212,1) 100%); /* FF3.6+ */
+				background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,rgba(242,242,242,1)), color-stop(49%,rgba(235,235,235,1)), color-stop(52%,rgba(225,225,225,1)), color-stop(100%,rgba(212,212,212,1))); /* Chrome,Safari4+ */
+				background: -webkit-linear-gradient(top,  rgba(242,242,242,1) 1%,rgba(235,235,235,1) 49%,rgba(225,225,225,1) 52%,rgba(212,212,212,1) 100%); /* Chrome10+,Safari5.1+ */
+				background: -o-linear-gradient(top,  rgba(242,242,242,1) 1%,rgba(235,235,235,1) 49%,rgba(225,225,225,1) 52%,rgba(212,212,212,1) 100%); /* Opera 11.10+ */
+				background: -ms-linear-gradient(top,  rgba(242,242,242,1) 1%,rgba(235,235,235,1) 49%,rgba(225,225,225,1) 52%,rgba(212,212,212,1) 100%); /* IE10+ */
+				background: linear-gradient(to bottom,  rgba(242,242,242,1) 1%,rgba(235,235,235,1) 49%,rgba(225,225,225,1) 52%,rgba(212,212,212,1) 100%); /* W3C */
+				filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f2f2', endColorstr='#d4d4d4',GradientType=0 ); /* IE6-9 */
+			}
+		</style>
+	</head>
+	<body>
+		<table>
+			<thead>
+				<tr>
+					<th rowspan="2">Order</th>
+					<th colspan="3">Personal Info</th>
+					<th colspan="5">University Marks</th>
+				</tr>
+				<tr>
+					<th>First Name</th>
+					<th>Last Name</th>
+					<th>Faculty Number</th>
+					<th>English</th>
+					<th>Math</th>
+					<th>Biology</th>
+					<th>Physics</th>
+					<th>Total</th>
+				</tr>
+			</thead>
+			<tfoot>
+				<tr>
+					<td colspan="9">
+						<input type="button" value="Previous" id="prev" name="prev"/>
+						<a href="02.MarksTables.html">1</a>, 
+						<a href="02.MarksTables.html">2</a>, 
+						<a href="02.MarksTables.html">3</a>, 
+						<a href="02.MarksTables.html">4</a>, 
+						<a href="02.MarksTables.html">...</a>, 
+						<a href="02.MarksTables.html">10</a> 
+						<input type="button" value="Next" id="next" name="next"/>
+					</td>
+				</tr>
+			</tfoot>
+			<tbody>
+				<tr>
+					<td>1</td>
+					<td>Pesho</td>
+					<td>Yordanov</td>
+					<td>123456</td>
+					<td>2</td>
+					<td>3</td>
+					<td>4</td>
+					<td>5</td>
+					<td><strong>3.50</strong></td>
+				</tr>
+				<tr>
+					<td>2</td>
+					<td>Pesho</td>
+					<td>Yordanov</td>
+					<td>123456</td>
+					<td>2</td>
+					<td>3</td>
+					<td>4</td>
+					<td>5</td>
+					<td><strong>3.50</strong></td>
+				</tr>
+				<tr>
+					<td>3</td>
+					<td>Pesho</td>
+					<td>Yordanov</td>
+					<td>123456</td>
+					<td>2</td>
+					<td>3</td>
+					<td>4</td>
+					<td>5</td>
+					<td><strong>3.50</strong></td>
+				</tr>
+				<tr>
+					<td>4</td>
+					<td>Pesho</td>
+					<td>Yordanov</td>
+					<td>123456</td>
+					<td>2</td>
+					<td>3</td>
+					<td>4</td>
+					<td>5</td>
+					<td><strong>3.50</strong></td>
+				</tr>
+				<tr>
+					<td>5</td>
+					<td>Pesho</td>
+					<td>Yordanov</td>
+					<td>123456</td>
+					<td>2</td>
+					<td>3</td>
+					<td>4</td>
+					<td>5</td>
+					<td><strong>3.50</strong></td>
+				</tr>
+				<tr>
+					<td>6</td>
+					<td>Pesho</td>
+					<td>Yordanov</td>
+					<td>123456</td>
+					<td>2</td>
+					<td>3</td>
+					<td>4</td>
+					<td>5</td>
+					<td><strong>3.50</strong></td>
+				</tr>
+				<tr>
+					<td>7</td>
+					<td>Pesho</td>
+					<td>Yordanov</td>
+					<td>123456</td>
+					<td>2</td>
+					<td>3</td>
+					<td>4</td>
+					<td>5</td>
+					<td><strong>3.50</strong></td>
+				</tr>
+				<tr>
+					<td>8</td>
+					<td>Pesho</td>
+					<td>Yordanov</td>
+					<td>123456</td>
+					<td>2</td>
+					<td>3</td>
+					<td>4</td>
+					<td>5</td>
+					<td><strong>3.50</strong></td>
+				</tr>
+				<tr>
+					<td>9</td>
+					<td>Pesho</td>
+					<td>Yordanov</td>
+					<td>123456</td>
+					<td>2</td>
+					<td>3</td>
+					<td>4</td>
+					<td>5</td>
+					<td><strong>3.50</strong></td>
+				</tr>
+				<tr>
+					<td>10</td>
+					<td>Pesho</td>
+					<td>Yordanov</td>
+					<td>123456</td>
+					<td>2</td>
+					<td>3</td>
+					<td>4</td>
+					<td>5</td>
+					<td><strong>3.50</strong></td>
+				</tr>
+			</tbody>
+		</table>
+	</body>
+</html>

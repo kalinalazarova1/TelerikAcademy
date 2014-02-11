@@ -1,0 +1,31 @@
+﻿ul, li {
+    margin: 0;
+    padding: 0;
+    width: 130px;
+}
+
+ul li{
+    list-style: none;
+    padding-left: 10px;
+}
+
+ul li a{
+    text-decoration: none;
+    color: #8c8c8c;
+}
+
+body > ul > li > a{
+    color: black;
+} 
+
+ul li:hover > a{
+    text-decoration: underline;
+}
+
+ul li ul{
+    display: none;
+}
+
+ul li:hover > ul{
+    display: block;
+}

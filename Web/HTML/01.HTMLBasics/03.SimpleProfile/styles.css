@@ -1,0 +1,20 @@
+body{
+		font-family: sans-serif;
+		background-color:#CCECFF;
+		color: #17365D;
+	}
+	
+	a{
+		color: #548DD4;
+		font-family: Trebuchet MS;
+		display: inline-block;
+		margin: 5px 100px 15px 5px;
+	}
+	
+	a:visited{
+		color: gray;
+	}
+	
+	ol{
+		list-style-type: decimal;
+	}

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Last Name</title>
+		<style>
+			body{
+				font-family: Arial;
+				font-size: 12px;
+				
+			}
+			
+			table, tr, td{
+				border-collapse: collapse;
+				border: 1px solid #A1A1A1;
+				width: 300px;
+			}
+			
+			td.left{
+				text-align: right;
+				font-weight: bold;
+				padding-right: 5px;
+				width: 125px;
+			}
+			
+			.small{
+				width: 50px;
+			}
+			
+			.middle{
+				width: 100px;
+			}
+			
+			.long{
+				width: 90%;
+			}
+			
+			.footer{
+				background-color: lightblue;
+				padding-left: 100px;
+			}
+			
+			.footer > input{
+				border-style: outset;
+			}
+		</style>
+	</head>
+	<body>
+		<form method="get" action="#">
+			<table>
+				<tr>
+					<td class="left"><label for="lastName">Last Name</label></td>
+					<td colspan="3"><input type="text" id="lastName" class="long"/></td>
+				</tr>
+				<tr>
+					<td class="left"><label for="firstName">First Name</label></td>
+					<td colspan="3"><input type="text" id="firstName" class="long"/></td>
+				</tr>
+				<tr>
+					<td class="left"><label for="address">Address</label></td>
+					<td colspan="3"><textarea rows="4" id="address" class="long"></textarea></td>
+				</tr>
+				<tr>
+					<td class="left"><label for="city">City</label></td>
+					<td class="middle"><input type="text" id="city"></td>
+					<td class="left"><label for="state">State</label></td>
+					<td class="small"><input type="text" id="state"></td>		
+				</tr>
+				<tr>
+					<td class="left"><label for="zip">Zip/Postal Code</label></td>
+					<td colspan="3"><input type="text" id="zip"/></td>
+				</tr>
+				<tr>
+					<td class="left"><label for="country" class="middle">Country</label></td>
+					<td colspan="3">
+						<select id="country" class="middle">
+							<option value="BG" selected="selected">Bulgaria</option>
+							<option value="TR">Turkey</option>
+							<option value="SB">Serbia</option>
+							<option value="RO">Romania</option>
+							<option value="OT">Other</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td class="left"><label for="countryCode">Phone(country code, area code, number)</label></td>
+					<td colspan="3">(+<input type="text" class="small" id="countryCode" pattern="[0-9]*"/> ) 
+						<input type="text" class="small" id="areaCode" pattern="[0-9]*"/> - 
+						<input type="text" class="middle" id="phone" pattern="[0-9]*"/>
+					</td>
+				</tr>
+				<tr>
+					<td class="left"><label for="email">E-mail</label></td>
+					<td colspan="3"><input type="email" id="email" class="long" pattern="^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$"/></td>
+				</tr>
+				<tr>
+					<td class="left"><label for="bmonth">Birth date</label></td>
+					<td colspan="3"><label for="bmonth">Month</label>
+						<input type="text" class="small" id="bmonth" pattern="[0]?[0-9]|[1][0-2]"/>
+						<label for="bday">Day</label>
+						<input type="text" class="small" id="bday" pattern="[0-2]?[0-9]|[3][0-1]"/>
+						<label for="byear">Year(4 digit)</label>
+						<input type="text" class="small" id="byear" pattern="[0-9]{4}"/>
+					</td>
+				</tr>
+				<tr>
+					<td class="left"><label for="gender" class="small">Gender</label></td>
+						<td colspan="3">
+							<select id="gender">
+								<option value="male">Male</option>
+								<option value="female">Female</option>
+							</select>
+						</td>
+					</tr>
+				<tr>
+					<td class="left"><label for="spring">Starting date</label></td>
+					<td colspan="3"><input type="radio" id="spring" name="myradio" value="spring" />
+						<label for="spring">Spring 2006</label>
+						<input type="radio" id="summer" name="myradio" value="summer" />
+						<label for="summer">Summer 2006</label>
+					</td>
+				</tr>
+				<tr>
+					<td class="left"><label for="comments">Comments/Questions</label></td>
+					<td colspan="3"><textarea rows="6" class="long" id="comments"></textarea></td>
+				</tr>
+				<tr>
+					<td colspan="4" class="footer">
+						<input type="submit" value="Submit"/>
+						<input type="reset" value="Clear this form"/>
+					</td>
+				</tr>
+			</table>
+		</form>
+	</body>
+</html>

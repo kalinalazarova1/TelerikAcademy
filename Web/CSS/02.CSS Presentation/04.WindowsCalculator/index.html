@@ -1,0 +1,148 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Calculator</title>
+    <link href="styles.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="calculator_window">
+        <span id="left_align"><img src="images\icon.png" alt="icon"/></span><span id="win_title">Calculator</span><span id="right_align"><img src="images\winbtn.png" alt="buttons"/></span>
+        <div id="calculator">  
+            <div id="menu">
+                <nav>
+                    <ul>
+                        <li><a href="#">V</a><a href="#" class="no_style">iew</a></li>
+                        <li><a href="#">E</a><a href="#" class="no_style">dit</a></li>
+                        <li><a href="#">H</a><a href="#" class="no_style">elp</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="clearfix"></div>   
+            <div id="calc_face">                  
+                <div id="decimal_display">
+                    <form action="#" method="get">
+                        <input type="text" id="display" value="8854455" readonly="readonly"/>
+                    </form>
+                </div>
+                <div id="binary_display">
+                    <div><span class="left_border">0000</span><span>0000</span><span>0000</span><span>0000</span><span>0000</span><span>0000</span><span>0000</span><span class="right_border">0000</span></div>
+                    <div class="bit_number"><span>63</span><span class="big_ident">47</span><span>32</span></div>
+                    <div><span class="left_border">0000</span><span>0000</span><span>1000</span><span>0111</span><span>0001</span><span>1011</span><span>1011</span><span class="right_border">0111</span></div>
+                    <div class="bit_number"><span>31</span><span class="big_ident">15</span><span>&nbsp;0</span></div>
+                </div>
+                <div id="radio">
+                    <form action="#" method="get">
+                        <fieldset>
+                            <ul>
+                                <li>
+                                    <input type="radio" name="num_system" id="hex" />
+                                    <label for="hex">Hex</label>
+                                </li>
+                                <li>
+                                    <input type="radio" name="num_system" id="dec" checked="checked" />
+                                    <label for="dec">Dec</label>
+                                </li>
+                                <li>
+                                    <input type="radio" name="num_system" id="oct" />
+                                    <label for="oct">Oct</label>
+                                </li>
+                                <li>
+                                    <input type="radio" name="num_system" id="bin" />
+                                    <label for="bin">Bin</label>
+                                </li>
+                            </ul>
+                        </fieldset>
+                        <fieldset>
+                            <ul>
+                                <li>
+                                    <input type="radio" name="bytes" id="qword" checked="checked" />
+                                    <label for="qword">Qword</label>
+                                </li>
+                                <li>
+                                    <input type="radio" name="bytes" id="dword" />
+                                    <label for="dword">Dword</label>
+                                </li>
+                                <li>
+                                    <input type="radio" name="bytes" id="word" />
+                                    <label for="word">Word</label>
+                                </li>
+                                <li>
+                                    <input type="radio" name="bytes" id="byte" />
+                                    <label for="byte">Byte</label>
+                                </li>
+                            </ul>
+                        </fieldset>
+                    </form>
+                </div>
+                <div id="buttons">
+                    <form action="#" method="get">
+                        <button id="empty">&emsp;</button>
+                        <button>Mod</button>
+                        <button disabled="disabled" class="digit">A</button>
+                        <button class="no_style">MC</button>
+                        <button class="no_style">MR</button>
+                        <button class="no_style">MS</button>
+                        <button class="no_style">M+</button>
+                        <button class="no_style">M-</button>
+                        <div class="clearfix"></div>
+                        <button>(</button>
+                        <button>)</button>
+                        <button disabled="disabled" class="digit">B</button>
+                        <button id="arrow">&larr;</button>
+                        <button>CE</button>
+                        <button>C</button>
+                        <button>&plusmn;</button>
+                        <button disabled="disabled">&radic;</button>
+                        <div class="clearfix"></div>
+                        <button>RoL</button>
+                        <button>RoR</button>
+                        <button disabled="disabled" class="digit">C</button>
+                        <button class="digit">7</button>
+                        <button class="digit">8</button>
+                        <button class="digit">9</button>
+                        <button>/</button>
+                        <button disabled="disabled">%</button>
+                        <div class="clearfix"></div>
+                        <button>Or</button>
+                        <button>Xor</button>
+                        <button disabled="disabled" class="digit">D</button>
+                        <button class="digit">4</button>
+                        <button class="digit">5</button>
+                        <button class="digit">6</button>
+                        <button class="big">*</button>
+                        <button disabled="disabled">1/<span class="italic">x</span></button>
+                        <div class="clearfix"></div>
+                        <div class="single_width">
+                            <button>Lsh</button>
+                            <button>Not</button>
+                        </div>
+                        <div class="single_width">
+                            <button>Rsh</button>
+                            <button>And</button>
+                        </div>
+                        <div class="single_width">
+                            <button disabled="disabled" class="digit">E</button>
+                            <button disabled="disabled" class="digit">F</button>
+                        </div>
+                        <div class="double_width">
+                            <button class="digit">1</button>
+                            <button class="digit">2</button>
+                            <button class="digit" id="zero">0</button>
+                        </div>
+                        <div class="single_width">
+                            <button class="digit">3</button>
+                            <button disabled="disabled">.</button>
+                        </div>
+                        <div class="single_width">
+                            <button class="big">-</button>
+                            <button class="big">+</button>
+                        </div>
+                        <button id="equal">=</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

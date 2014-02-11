@@ -1,0 +1,24 @@
+﻿body {
+    font-family : Consolas, sans-serif;
+}
+
+@font-face
+{
+font-family: ITCEdwardian;
+src: url(itcedscr.ttf) format('truetype'),
+     url(itcedscr.eot) format('embedded-opentype');
+}
+
+p {
+    color : #0094ff;
+}
+
+p::first-line {
+    font-weight : 600;
+    line-height : 30px;
+}
+
+p::first-letter {
+    font-family : ITCEdwardian, serif;
+    font-size : 3em;
+}

@@ -1,0 +1,65 @@
+﻿body, section, article, div {
+    margin: 0;
+    padding: 0;
+    font-family: Arial;
+    font-size: 12px;
+}
+
+h1{
+    font-size: 1.3em;
+    font-weight: normal;
+    margin-left: 0.7em;
+}
+
+div{
+    width: 16em;
+    height: 5em;
+    float: left;
+    margin-top: 1em;   
+}
+
+article > img{
+    float: left;
+    margin: 1.3em;
+    border: 1px solid #a9a9a9;
+}
+
+div.wrapper{
+    margin-left: 1em;
+    background-color: #eeeeee;
+    box-shadow: 2px 2px 4px black;
+    width: 33.4em;
+    height: 44em;
+}
+
+div.button{
+    float: right;
+    width: 6.7em;
+    height: 2em;
+    margin-top: 0.7em;
+    margin-right: -0.3em;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+div.button a{
+    color: white;
+    font-weight: normal;
+    position: relative;
+    left: 2.1em;
+    top: -1.9em;
+}
+
+article {
+    background-color: white;
+    border: 1px solid #a9a9a9;
+    margin-left: 1em;
+    margin-right: 0.7em;
+    margin-top: 3em;
+    margin-bottom: 2.5em;
+    height: 10em;
+}
