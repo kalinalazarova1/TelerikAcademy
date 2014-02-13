@@ -1,0 +1,92 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Sort Real Numbers</title>
+    <link href="js-console.min.css" rel="stylesheet" />
+</head>
+<body>
+    <!--Sort 3 real values in descending order using nested if statements.-->
+    <div id="js-console">
+        <label for="number-input1">Input first real number and press Enter: </label>
+        <input type="text" id="number-input1" onkeydown="OnEnterKeyPressed(event)" />
+        <br />
+        <label for="number-input2">Input second real number and press Enter: </label>
+        <input type="text" id="number-input2" onkeydown="OnEnterKeyPressed(event)" />
+        <br />
+        <label for="number-input3">Input third real number and press Enter: </label>
+        <input type="text" id="number-input3" onkeydown="OnEnterKeyPressed(event)" />
+        <br />
+    </div>
+    <script src="js-console.js"></script>
+    <script>
+        window.onload = function () {
+            document.getElementById("number-input1").focus();
+        }
+
+        function SortThreeReal() {
+            var first = jsConsole.readFloat("input#number-input1");
+            var second = jsConsole.readFloat("input#number-input2");
+            var third = jsConsole.readFloat("input#number-input3");
+            var biggestReal;
+            var smallestReal;
+            var middleReal;
+            if (!first && first !== 0 || !second && second !== 0 || !third && third !== 0) {
+                jsConsole.writeLine("The entered numbers are not valid.");
+            }
+            else {
+                if (first < second) {
+                    if (third > second) {
+                        biggestReal = third;
+                        smallestReal = first;
+                        middleReal = second;
+                    }
+                    else {
+                        biggestReal = second;
+                        if (first < third) {
+                            smallestReal = first;
+                            middleReal = third;
+                        }
+                        else {
+                            smallestReal = third;
+                            middleReal = first;
+                        }
+                    }
+                }
+                else {
+                    if (third > first) {
+                        biggestReal = third;
+                        smallestReal = second;
+                        middleReal = first;
+                    }
+                    else {
+                        biggestReal = first;
+                        if (second < third) {
+                            smallestReal = second;
+                            middleReal = third;
+                        }
+                        else {
+                            smallestReal = third;
+                            middleReal = second;
+                        }
+                    }
+                }
+                jsConsole.writeLine("The sorted numbers are: " + biggestReal + ", " + middleReal + ", " + smallestReal);
+            }
+        }
+
+        function OnEnterKeyPressed(event) {
+            if (event.keyCode == 13) {
+                if (document.activeElement == document.getElementById("number-input1")) {
+                    document.getElementById("number-input2").focus();
+                }
+                else if (document.activeElement == document.getElementById("number-input2")) {
+                    document.getElementById("number-input3").focus();
+                }
+                else {
+                    SortThreeReal();
+                }
+            }
+        }
+    </script>
+</body>
+</html>

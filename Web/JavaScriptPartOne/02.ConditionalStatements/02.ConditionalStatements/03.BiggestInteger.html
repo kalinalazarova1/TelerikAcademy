@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Biggest Integer</title>
+    <link href="js-console.min.css" rel="stylesheet" />
+</head>
+<body>
+    <!--Write a script that finds the biggest of three integers using nested if statements.-->
+    <div id="js-console">
+        <label for="number-input1">Input first integer number and press Enter: </label>
+        <input type="text" id="number-input1" onkeydown="OnEnterKeyPressed(event)" />
+        <br />
+        <label for="number-input2">Input second integer number and press Enter: </label>
+        <input type="text" id="number-input2" onkeydown="OnEnterKeyPressed(event)" />
+        <br />
+        <label for="number-input3">Input third integer number and press Enter: </label>
+        <input type="text" id="number-input3" onkeydown="OnEnterKeyPressed(event)" />
+        <br />
+    </div>
+    <script src="js-console.js"></script>
+    <script>
+        window.onload = function () {
+            document.getElementById("number-input1").focus();
+        }
+
+        function BiggestInteger() {
+            var first = jsConsole.readInteger("input#number-input1");
+            var second = jsConsole.readInteger("input#number-input2");
+            var third = jsConsole.readInteger("input#number-input3");
+			var biggestInteger;
+            if (!first && first !== 0 || !second && second !== 0 || !third && third!== 0) {
+                jsConsole.writeLine("The entered numbers are not valid.");
+            }
+            else if (first < second){
+				if(third > second){
+					biggestInteger = third;
+				}
+				else {
+					biggestInteger = second;
+				}
+            }
+			else {
+				if(third > first){
+					biggestInteger = third;
+				}
+				else {
+					biggestInteger = first;
+				}
+			}
+            jsConsole.writeLine("The biggest integer is: " + biggestInteger);
+        }
+
+        function OnEnterKeyPressed(event) {
+            if (event.keyCode == 13) {
+                if (document.activeElement == document.getElementById("number-input1")) {
+                    document.getElementById("number-input2").focus();
+                }
+                else if (document.activeElement == document.getElementById("number-input2")) {
+                    document.getElementById("number-input3").focus();
+                }
+                else {
+                    BiggestInteger();
+                }
+            }
+        }
+    </script>
+</body>
+</html>

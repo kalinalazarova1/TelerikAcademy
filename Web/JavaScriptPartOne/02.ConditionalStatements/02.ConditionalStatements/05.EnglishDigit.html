@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>English Digit</title>
+    <link href="js-console.min.css" rel="stylesheet" />
+</head>
+<body>
+    <!--Write script that asks for a digit and depending on the input shows the name of that digit
+        (in English) using a switch statement.-->
+    <div id="js-console">
+        <label for="number-input">Input a digit and press Enter: </label>
+        <input type="text" id="number-input" onkeydown="OnEnterKeyPressed(event)" />
+        <br />
+    </div>
+    <script src="js-console.js"></script>
+    <script>
+        window.onload = function () {
+            document.getElementById("number-input").focus();
+        }
+
+        function EnglishDigit() {
+            var number = jsConsole.readInteger("input");
+            if (!number && number !== 0 || number < 0 || number > 10) {
+                jsConsole.writeLine("The entered digit is not valid.");
+            }
+            else {
+                switch (number) {
+                    case 0: jsConsole.writeLine("zero"); break;
+                    case 1: jsConsole.writeLine("one"); break;
+                    case 2: jsConsole.writeLine("two"); break;
+                    case 3: jsConsole.writeLine("three"); break;
+                    case 4: jsConsole.writeLine("four"); break;
+                    case 5: jsConsole.writeLine("five"); break;
+                    case 6: jsConsole.writeLine("six"); break;
+                    case 7: jsConsole.writeLine("seven"); break;
+                    case 8: jsConsole.writeLine("eight"); break;
+                    case 9: jsConsole.writeLine("nine"); break;
+                    default: jsConsole.writeLine("The entered digit is not valid."); break;
+                }
+            }
+        }
+
+        function OnEnterKeyPressed(event) {
+            if (event.keyCode == 13) {
+                EnglishDigit();
+            }
+        }
+    </script>
+</body>
+</html>

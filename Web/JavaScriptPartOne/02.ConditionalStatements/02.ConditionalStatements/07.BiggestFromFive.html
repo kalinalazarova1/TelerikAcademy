@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Biggest From Five Numbers</title>
+    <link href="js-console.min.css" rel="stylesheet" />
+</head>
+<body>
+    <!--Write a script that finds the greatest of given 5 variables.-->
+    <div id="js-console">
+        <label for="number-input">Input five numbers separated by spaces and press Enter: </label><br />
+        <input type="text" id="number-input" onkeydown="OnEnterKeyPressed(event)" />
+        <br />
+    </div>
+    <script src="js-console.js"></script>
+    <script>
+        window.onload = function () {
+            document.getElementById("number-input").focus();
+        }
+
+        function BiggestNumber() {
+            var input = jsConsole.read("input");
+            var arr = input.split(" ");
+            var biggest = parseFloat(arr[0]);
+            for (var i = 1; i < 5; i++) {
+                var temp = parseFloat(arr[i]);
+                if (!temp && temp !== 0 || !biggest && biggest !== 0) {
+                    jsConsole.writeLine("Invalid input string.");
+                    return;
+                }
+                else {
+                    if(temp > biggest) {
+                        biggest = temp;
+                    }
+                }
+            }
+            jsConsole.writeLine("The biggest number is: " + biggest);
+        }
+
+        function OnEnterKeyPressed(event) {
+            if (event.keyCode == 13) {
+                BiggestNumber();
+            }
+        }
+    </script>
+</body>
+</html>
