@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Selection Sort Version 2</title>
+    <link href="js-console.min.css" rel="stylesheet" />
+</head>
+<body>
+    <!--Sorting an array means to arrange its elements in increasing order. Write a script to sort an array.
+        Use the "selection sort" algorithm: Find the smallest element, move it at the first position, find the
+        smallest from the rest, move it at the second position, etc.-->
+    <div id="js-console">
+        <label for="number-input1">Input array of numbers separated by spaces and press Enter: </label><br />
+        <input type="text" id="number-input1" onkeydown="OnEnterKeyPressed(event)" />
+        <br />
+    </div>
+    <script src="js-console.js"></script>
+    <script>
+        window.onload = function () {
+            document.getElementById("number-input1").focus();
+        }
+
+        function SelectionSort() {
+            //This version uses one array
+            var sequence = jsConsole.read("input#number-input1").split(' ');
+            var min, temp;
+            for (var i = 0; i < sequence.length; i++)
+            {
+                min = i;
+                for (var j = i; j < sequence.length; j++)
+                {
+                    if (Number(sequence[j]) < Number(sequence[min]))
+                    {
+                        min = j;
+                    }
+                }
+                temp = sequence[i];
+                sequence[i] = sequence[min];
+                sequence[min] = temp;
+            }
+            jsConsole.writeLine("The sorted array is: " + sequence.join(', '));
+        }
+
+        function OnEnterKeyPressed(event) {
+            if (event.keyCode == 13) {
+                SelectionSort();
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Maximal sequence of increasing elements</title>
+    <link href="js-console.min.css" rel="stylesheet" />
+</head>
+<body>
+    <!--Write a script that finds the maximal increasing sequence in an array.-->
+    <div id="js-console">
+        <label for="number-input1">Input array of numbers separated by spaces and press Enter: </label><br />
+        <input type="text" id="number-input1" onkeydown="OnEnterKeyPressed(event)" />
+        <br />
+    </div>
+    <script src="js-console.js"></script>
+    <script>
+        window.onload = function () {
+            document.getElementById("number-input1").focus();
+        }
+
+        function MaxIncreasingSequence() {
+            var sequence = jsConsole.read("input#number-input1").split(' ');
+            var maxSequence = 0;
+            var startElementIndex = 0;
+            var currentSequence = 1;
+            for (var i = 1; i < sequence.length; i++) {
+                if (parseInt(sequence[i]) > parseInt(sequence[i - 1])) {
+                    currentSequence++;
+                    if (currentSequence > maxSequence) {
+                        maxSequence = currentSequence;
+                        startElementIndex = i - maxSequence + 1;
+                    }
+                }
+                else {
+                    currentSequence = 1;
+                }
+            }
+            jsConsole.writeLine("The longest sequence of increasing elements is: " + sequence.splice(startElementIndex, maxSequence).join(' '));
+        }
+
+        function OnEnterKeyPressed(event) {
+            if (event.keyCode == 13) {
+                MaxIncreasingSequence();
+            }
+        }
+    </script>
+</body>
+</html>
