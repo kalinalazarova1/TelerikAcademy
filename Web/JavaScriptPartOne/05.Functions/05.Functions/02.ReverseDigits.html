@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Reverse Digits</title>
+    <link href="js-console.min.css" rel="stylesheet" />
+</head>
+<body>
+    <!--Write a function that reverses the digits of given decimal number.-->
+    <div id="js-console">
+        <label for="number-input">Input an integer number and press Enter: </label>
+        <input type="text" id="number-input" onkeydown="onEnterKeyPressed(event)" />
+        <br />
+    </div>
+    <script src="js-console.js"></script>
+    <script>
+        window.onload = function () {
+            document.getElementById("number-input").focus();
+        }
+
+        function reverseDigitsTest() {      //this function tests the LastDigit() function
+            var number = jsConsole.read("input");
+            jsConsole.writeLine("The reversed number of " + parseInt(number) + " is: " + reverseDigits(Math.abs(parseInt(number))));
+        }
+
+        function reverseDigits(number) {          //this is the function that reverses the digits of a number and returns the reversed number 
+            var result = "";
+            var original = parseInt(number);
+            if (!original && original !== 0) return undefined;
+            for (var i = 0; original > 0; original = Math.floor(original / 10)) result += original % 10;
+            return result;
+        }
+
+        function onEnterKeyPressed(event) {
+            if (event.keyCode == 13) {
+                reverseDigitsTest();
+            }
+        }
+    </script>
+</body>
+</html>

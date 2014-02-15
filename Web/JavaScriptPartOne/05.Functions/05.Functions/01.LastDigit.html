@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Last Digit</title>
+    <link href="js-console.min.css" rel="stylesheet" />
+</head>
+<body>
+    <!--Write a function that returns the last digit of given integer as an English word.-->
+    <div id="js-console">
+        <label for="number-input">Input an integer number and press Enter: </label>
+        <input type="text" id="number-input" onkeydown="onEnterKeyPressed(event)" />
+        <br />
+    </div>
+    <script src="js-console.js"></script>
+    <script>
+        window.onload = function () {
+            document.getElementById("number-input").focus();
+        }
+
+        function lastDigitTest() {      //this function tests the LastDigit() function
+            var number = jsConsole.read("input");
+            jsConsole.writeLine("The last digit of " + number + " is: " + lastDigit(number));
+        }
+
+        function lastDigit(number) {          //this is the function that gets a digit and returns the english digit
+            var names = ["zero","one","two","three","four","five","six","seven","eight","nine"];
+            var digit = parseInt(number) % 10;
+            if (!digit && digit !== 0) return undefined;
+            return names[digit];
+        }
+
+        function onEnterKeyPressed(event) {
+            if (event.keyCode == 13) {
+                lastDigitTest();
+            }
+        }
+    </script>
+</body>
+</html>
