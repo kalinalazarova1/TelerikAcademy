@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Group persons</title>
+    <link href="js-console.min.css" rel="stylesheet" />
+</head>
+<body>
+    <!--Write a function that groups an array of persons by age, first or last name. The function must return an associative array,
+        with keys - the groups, and values -arrays with persons in this groups
+        Use function overloading (i.e. just one function)-->
+    <div id="js-console">
+    </div>
+    <script src="js-console.js"></script>
+    <script>
+        
+        window.onload = function testGroupPersons() {
+            var persons = [ { firstname: "Ivan", lastname: "Ivanov", age: 21 },
+                            { firstname: "Hristo", lastname: "Ivanov", age: 33 },
+                            { firstname: "Hristo", lastname: "Penev", age: 52 },
+                            { firstname: "Petar", lastname: "Hristov", age: 33 },
+                            { firstname: "Petar", lastname: "Penev", age: 52 }];
+            jsConsole.writeLine("Grouped by first name:");
+            for (group in groupPersons(persons, "firstname")) {
+                jsConsole.writeLine("-----------------------------------");
+                jsConsole.writeLine("Group: " + group);
+                for (var i = 0; i < groupPersons(persons, "firstname")[group].length; i++)
+                    jsConsole.writeLine(groupPersons(persons, "firstname")[group][i].firstname + " " + groupPersons(persons, "firstname")[group][i].lastname);
+            }
+            jsConsole.writeLine();
+            jsConsole.writeLine("Grouped by age:");
+            for (group in groupPersons(persons, "age")) {
+                jsConsole.writeLine("-----------------------------------");
+                jsConsole.writeLine("Group: " + group);
+                for (var i = 0; i < groupPersons(persons, "age")[group].length; i++)
+                    jsConsole.writeLine(groupPersons(persons, "age")[group][i].firstname + " " + groupPersons(persons, "age")[group][i].lastname);
+            }
+        }
+
+        function groupPersons(persons, prop) {
+            var groupedPersons = {};
+            for (var i = 0; i < persons.length; i++) {
+                if (groupedPersons[persons[i][prop]]) groupedPersons[persons[i][prop]].push(persons[i]);
+                else groupedPersons[persons[i][prop]] = new Array(persons[i]);
+            }
+            return groupedPersons;
+        }
+    </script>
+</body>
+</html>
