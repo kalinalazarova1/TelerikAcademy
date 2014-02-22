@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Replace spaces</title>
+    <link href="js-console.min.css" rel="stylesheet" />
+</head>
+<body>
+    <!--Write a function that replaces non breaking white-spaces in a text with &nbsp;-->
+    <div id="js-console">
+        <label for="input1">Input text and press Enter: </label>
+        <input type="text" id="input1" onkeydown="onEnterKeyPressed(event)" />
+        <br />
+    </div>
+    <script src="js-console.js"></script>
+    <script>
+        window.onload = function () {
+            document.getElementById("input1").focus();
+        }
+
+        function replaceSpacesTest() {
+            var text = jsConsole.read("input#input1");
+            jsConsole.writeLine("The result is written in the browser console");
+            console.log(replaceSpaces(text));
+        }
+
+        function replaceSpaces(text) {
+            return text.split(" ").join('&nbsp;');
+        };
+
+        function onEnterKeyPressed(event) {
+            if (event.keyCode == 13)
+                replaceSpacesTest();
+        }
+    </script>
+</body>
+</html>

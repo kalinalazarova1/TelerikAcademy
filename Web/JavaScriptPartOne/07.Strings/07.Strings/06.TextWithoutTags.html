@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Remove tags</title>
+    <link href="js-console.min.css" rel="stylesheet" />
+</head>
+<body>
+    <!--Write a function that extracts the content of a html page given as text.
+         The function should return anything that is in a tag, without the tags:-->
+    <div id="js-console">
+        <label for="input1">Input text with tags and press Enter: </label>
+        <input type="text" id="input1" onkeydown="onEnterKeyPressed(event)" />
+        <br />
+    </div>
+    <script src="js-console.js"></script>
+    <script>
+        window.onload = function () {
+            document.getElementById("input1").focus();
+        }
+
+        function removeTagsTest() {
+            var text = jsConsole.read("input#input1");
+            //var text = "<html><head><title>News </title></head><body><p><a href=&quot;http://academy.telerik.com&quot;>Telerik Academy</a> aims to provide free real-world practical training for young people who want to turn into skillful .NET software engineers.</p></body></html>";
+            jsConsole.writeLine("The result is: " + removeTags(text));
+        }
+
+        function removeTags(text) {
+            return text.replace(/<[^>]+>/ig, "");
+        };
+
+        function onEnterKeyPressed(event) {
+            if (event.keyCode == 13)
+                removeTagsTest();
+        }
+    </script>
+</body>
+
+</html>

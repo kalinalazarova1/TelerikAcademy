@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Reverse string</title>
+    <link href="js-console.min.css" rel="stylesheet" />
+</head>
+<body>
+    <!--Write a JavaScript function reverses string and returns it-->
+    <div id="js-console">
+        <label for="input">Input a string and press Enter: </label>
+        <input type="text" id="input" onkeydown="onEnterKeyPressed(event)" />
+        <br />
+    </div>
+    <script src="js-console.js"></script>
+    <script>
+        window.onload = function () {
+            document.getElementById("input").focus();
+        }
+
+        function reverseStringTest() {
+            var text = jsConsole.read("input");
+            jsConsole.writeLine("The reversed string of " + text + " is: " + reverseString(text));
+        }
+
+        function reverseString(text) {
+            var result = "";
+            for (var i = text.length - 1; i >= 0; i--) result += text[i];
+            return result;
+        }
+
+        function onEnterKeyPressed(event) {
+            if (event.keyCode == 13) {
+                reverseStringTest();
+            }
+        }
+    </script>
+</body>
+</html>

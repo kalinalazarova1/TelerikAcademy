@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Create Unordered List</title>
+    <link href="js-console.min.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="js-console">
+        <div data-type="template" id="list-item"><strong>-{name}-</strong> <span>-{age}-</span> <span>-{town}-</span></div>
+    </div>
+    <script src="js-console.js"></script>
+    <script>
+        var people = [{ name: "Peter", age: 14, town: "Sofia" }, { name: "Maria", age: 15, town: "Plovdiv" }, { name: "Ivan", age: 18, town: "Burgas"}];
+        var template = document.getElementById("list-item").innerHTML;
+        var peopleList = generateList(people, template);
+        document.getElementById("list-item").innerHTML = peopleList;
+
+        function generateList(people, template) {       //generates the list according to the template and additional fields could be added(for example: town) without changing the function
+            var result = "";
+            for (var i = 0; i < people.length; i++) {
+                var temp = template.split(/[{}]/);
+                var listItem = "";
+                for (var j = 1; j < temp.length; j += 2) {
+                    listItem += temp[j - 1] + people[i][temp[j]];
+                }
+                listItem += temp[temp.length - 1];
+                result += "<li>" + listItem + "</li>";
+            }
+            result = "<ul>" + result + "</ul>";
+            return result;
+        }
+    </script>
+</body>
+</html>

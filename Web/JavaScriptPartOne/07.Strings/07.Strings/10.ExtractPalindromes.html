@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Extract palindromes</title>
+    <link href="js-console.min.css" rel="stylesheet" />
+</head>
+<body>
+    <!--Write a program that extracts from a given text all palindromes, e.g. "ABBA", "lamal", "exe".-->
+    <div id="js-console">
+        <label for="input1">Input a text and press Enter: </label>
+        <input type="text" id="input1" onkeydown="onEnterKeyPressed(event)" />
+        <br />
+    </div>
+    <script src="js-console.js"></script>
+    <script>
+        window.onload = function () {
+            document.getElementById("input1").focus();
+        }
+
+        function extractPalindromesTest() {
+            var text = jsConsole.read("input#input1");
+            jsConsole.writeLine("The result is:");
+            jsConsole.writeLine(extractPalindromes(text).join('<br />'));
+        }
+
+        function isPalindrome(word) {
+            return word == word.split('').reverse().join('') && word !== '' && word.length > 1;
+        }
+
+        function extractPalindromes(text) {
+            var words = text.split(/\W/);
+            var result = [];
+            for (var i = 0; i < words.length; i++) {
+                if (isPalindrome(words[i]))
+                    result.push(words[i]);
+            }
+            return result;
+        };
+
+        function onEnterKeyPressed(event) {
+            if (event.keyCode == 13)
+                extractPalindromesTest();
+        }
+    </script>
+</body>
+</html>
