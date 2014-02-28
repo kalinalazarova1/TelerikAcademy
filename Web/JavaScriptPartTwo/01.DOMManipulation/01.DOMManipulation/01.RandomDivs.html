@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Random Divs</title>
+    <style>
+        div { 
+            text-align: center;
+        }
+        
+    </style>
+</head>
+<body>
+    <!--Write a script that creates a number of div elements. Each div element must have the following
+        Random width and height between 20px and 100px
+        Random background color
+        Random font color
+        Random position on the screen (position:absolute)
+        A strong element with text "div" inside the div
+        Random border radius
+        Random border color
+        Random border width between 1px and 20px-->
+    <label for="count">Please input div count and press Enter:</label>
+    <input type="text" id="count" onkeydown="enterKeyPressed(event)"/>
+    <div id="wrapper"></div>
+    <script>
+        function randomInRange(start, end) {
+            return start + Math.random() * end;
+        }
+
+        function randomColor() {
+            return "rgb(" + Math.floor(randomInRange(0, 256)) + "," + Math.floor(randomInRange(0, 256)) + "," + Math.floor(randomInRange(0, 256)) + ")";
+        }
+
+        function createMultipleDivs() {
+            var wrapper = document.getElementById("wrapper");  
+            for (var i = wrapper.firstChild; i !== null; i = wrapper.firstChild) i.parentNode.removeChild(i);
+            var count = Number(document.getElementById("count").value);
+            var docFrag = document.createDocumentFragment();
+            for (var i = 0; i < count; i++) {
+                var singleDiv = document.createElement("div");
+                singleDiv.style.width = randomInRange(20, 100) + "px";
+                singleDiv.style.height = randomInRange(20, 100) + "px";
+                singleDiv.style.backgroundColor = randomColor();
+                singleDiv.style.color = randomColor();
+                singleDiv.style.borderRadius = randomInRange(1, 20) + "px";
+                singleDiv.style.borderColor = randomColor();
+                singleDiv.style.position = "absolute";
+                singleDiv.style.left = parseInt(randomInRange(10, 1000)) + "px";
+                singleDiv.style.top = parseInt(randomInRange(10, 500)) + "px";
+                singleDiv.style.borderWidth = randomInRange(1, 20) + "px";
+                singleDiv.innerHTML = "<strong>DIV</strong>";
+                docFrag.appendChild(singleDiv);
+            }
+            wrapper.appendChild(docFrag);
+        }
+
+        window.onload = function () {
+            document.getElementById("count").focus();
+        }
+
+        function enterKeyPressed(event) {
+            if (event.keyCode == 13) {
+                createMultipleDivs();
+            }
+        }
+
+    </script>
+</body>
+</html>

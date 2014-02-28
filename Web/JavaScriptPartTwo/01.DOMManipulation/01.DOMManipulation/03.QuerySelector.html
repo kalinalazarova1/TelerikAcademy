@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Query Selector</title>
+    <script src="sizzle.min.js"></script>
+    <style>
+        .foo {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            left: 50px;
+            top: 50px;
+            background-color: greenyellow;
+            border-radius: 5px;
+            padding: 5px;
+        }
+
+        #wrapper {
+            width: 500px;
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+    <!--Write a script that shims querySelector and querySelectorAll in older browsers-->
+    <div id="wrapper">
+        <div class="foo"></div>
+        <div class="foo"></div>
+        <div class="foo"></div>
+    </div>
+    <script>
+        if (!document.querySelector) {
+            document.querySelector = function (selector) {
+                return Sizzle(selector)[0];
+            };
+        }
+
+        if (!document.querySelectorAll) {
+            document.querySelectorAll = function (selector) {
+                return Sizzle(selector);
+            };
+        }
+
+        var container = document.querySelector('#wrapper').style.border = "2px solid red";
+        var all = document.querySelectorAll('div.foo');
+        for (var i = 0, len = all.length; i < len; i++) {
+            all[i].style.left = 50 + i * 150 + "px";
+            all[i].innerHTML = 'This is the content of div number ' + (i + 1);
+        }
+    </script>
+</body>
+</html>

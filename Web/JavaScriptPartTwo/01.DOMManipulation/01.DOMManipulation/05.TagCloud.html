@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Tag Cloud</title>
+    <style>
+        body {
+            background-color: gray;
+        }
+        #tag-cloud{
+            background-color: white;
+            font-family: Consolas;
+            border: 1px solid black;
+            width: 300px;
+            height: 400px;
+            overflow: auto;
+        }
+    </style>
+</head>
+<body>
+    <!--Create a tag cloud:
+        Visualize a string of tags (strings) in a given container
+        By given minFontSize and maxFontSize, generate the tags with different font-size, depending on the number of occurrences-->
+    <div id="tag-cloud"></div>
+    <script>
+
+        window.onload = function () {
+            generateTagCloud(getElementsCount(tags), minFontSize, maxFontSize);
+        }
+        var tags = ["cms", "javascript", "js", "ASP.NET MVC", ".net", ".net", "css", "wordpress", "xaml", "js", "http", "web", "asp.net", "asp.net MVC", "ASP.NET MVC", "wp", "javascript", "js", "cms", "html", "javascript", "http", "http", "CMS"];
+        var minFontSize = 12;
+        var maxFontSize = 32;
+
+        function getElementsCount(arr) {
+            var result = {};
+            for (var i = 0; i < arr.length; i++) arr[i] = arr[i].toLowerCase(); 
+            arr.sort();             //this sort is lexicographical but it is ok for my purpose
+            result[arr[0]] = 1;
+            for (var i = 1; i < arr.length; i++) {
+                if (arr[i] === arr[i - 1]) {
+                    result[arr[i - 1]]++;
+                }
+                else {
+                    result[arr[i]] = 1;
+                }
+            }
+            return result;
+        }
+
+        function generateTagCloud(arr, min, max) {
+            maxCount = 1;
+            for (i in arr) {
+                if(Number(arr[i]) > maxCount) maxCount = Number(arr[i]);
+            }
+            for (i in arr) {
+                var tag = document.createElement("span");
+                tag.innerHTML = i;
+                tag.style.fontSize = ((max - min) / (maxCount - 1) * Number(arr[i]) + min) + "px";
+                var space = document.createElement("span");
+                space.innerHTML = " ";
+                var cloud = document.getElementById("tag-cloud");
+                cloud.appendChild(tag);
+                cloud.appendChild(space);
+            }
+        }
+    </script>
+</body>
+</html>

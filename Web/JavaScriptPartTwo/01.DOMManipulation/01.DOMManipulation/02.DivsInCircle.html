@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Divs in circle</title>
+    <style>
+         .circles {
+            width: 50px;
+            height: 50px;
+            border-radius: 50px;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <!--Write a script that creates 5 div elements and moves them in circular path with interval of 100 milliseconds-->
+    <label for="count">Please input div count and press Enter:</label>
+    <input type="text" id="count" onkeydown="enterKeyPressed(event)" />
+    <div id="wrapper">
+    </div>
+    <script>
+        function randomColor() {
+            return "rgb(" + parseInt(Math.random() * 256) + "," + parseInt(Math.random() * 256) + "," + parseInt(Math.random() * 256) + ")";
+        }
+        function moveDiv(angle, singleDiv) {
+            angle = angle + 0.1; //speed 1 radian per second;
+            var r = 100,         //radius of circle path
+                xCenter = 200,   //x location of circle path centre on screen
+                yCenter = 600,   //y location of circle path centre on screen
+                x = Math.floor(xCenter + (r * Math.cos(angle))), 
+                y = Math.floor(yCenter + (r * Math.sin(angle))); 
+            singleDiv.style.top = x + "px"; //set divs new coordinates
+            singleDiv.style.left = y + "px"; //set divs new coordinates
+
+            setTimeout(function() { //repeats the function moveDiv every 100 miliseconds
+                moveDiv(angle, singleDiv);
+            }, 100);
+        }
+
+        function createMultipleDivs(divCount) {
+            var wrapper = document.getElementById("wrapper");
+            for (var i = wrapper.firstChild; i !== null; i = wrapper.firstChild) i.parentNode.removeChild(i);
+            for (var i = 0; i < divCount; i++) {
+                singleDiv = document.createElement("div");
+                singleDiv.className = "circles";
+                singleDiv.style.backgroundColor = randomColor();
+                wrapper.appendChild(singleDiv);
+                moveDiv(Math.PI * 2 * i / divCount, singleDiv);
+            }
+        }
+        
+        window.onload = function () {
+            document.getElementById("count").focus();
+        }
+
+        function enterKeyPressed(event) {
+            if (event.keyCode == 13) {
+                createMultipleDivs(document.getElementById("count").value);
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,136 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Tree View Component</title>
+    <style>
+        ul {
+            list-style-image: url(rightarrow.jpg);
+        }
+
+        li > ul {
+            display: none;
+        }
+
+        a, a:visited, a:active {
+            text-decoration: none;
+            color: black;
+        }
+
+    </style>
+</head>
+<body>
+    <ul>
+        <li>
+            <a href="#">Item</a>
+            <ul>
+                <li>
+                    <a href="#">Sub item</a>
+                    <ul>
+                        <li><a href="#">Sub item</a></li>
+                        <li><a href="#">Sub item</a></li>
+                        <li><a href="#">Sub item</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Sub item</a>
+                    <ul>
+                        <li><a href="#">Sub item</a></li>
+                        <li><a href="#">Sub item</a></li>
+                        <li><a href="#">Sub item</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Sub item</a>
+                    <ul>
+                        <li><a href="#">Sub item</a></li>
+                        <li><a href="#">Sub item</a></li>
+                        <li><a href="#">Sub item</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">Item</a>
+            <ul>
+                <li>
+                    <a href="#">Sub item</a>
+                    <ul>
+                        <li><a href="#">Sub item</a></li>
+                        <li><a href="#">Sub item</a></li>
+                        <li><a href="#">Sub item</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Sub item</a>
+                    <ul>
+                        <li><a href="#">Sub item</a></li>
+                        <li><a href="#">Sub item</a></li>
+                        <li><a href="#">Sub item</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Sub item</a>
+                    <ul>
+                        <li><a href="#">Sub item</a></li>
+                        <li><a href="#">Sub item</a></li>
+                        <li><a href="#">Sub item</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">Item</a>
+            <ul>
+                <li>
+                    <a href="#">Sub item</a>
+                    <ul>
+                        <li><a href="#">Sub item</a></li>
+                        <li><a href="#">Sub item</a></li>
+                        <li><a href="#">Sub item</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Sub item</a>
+                    <ul>
+                        <li><a href="#">Sub item</a></li>
+                        <li><a href="#">Sub item</a></li>
+                        <li><a href="#">Sub item</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Sub item</a>
+                    <ul>
+                        <li><a href="#">Sub item</a></li>
+                        <li><a href="#">Sub item</a></li>
+                        <li><a href="#">Sub item</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+    </ul>
+    <script>
+        /* 6.*Create a TreeView component
+            Initially only the top items must be visible
+            On item click
+            If its children are hidden (collapsed), 
+            they must be made visible (expanded)
+            If its children are visible (expanded), 
+            they must be made hidden (collapsed)
+            Research about events.*/
+
+        var all = document.getElementsByTagName('li');
+        for (var i = 0; i < all.length; i++) {
+            all[i].addEventListener("click", toggleDisplay, false);
+        }
+            function toggleDisplay(event) {         
+                if (this.getElementsByTagName('ul').length == 0) return;
+                if ((this === event.target || this === event.target.parentNode) //makes sure the toggleDisplay() is executed only on clicked a element or its parent li element
+                    && this.getElementsByTagName('ul')[0].style.display == 'block')
+                    this.getElementsByTagName('ul')[0].style.display = 'none';
+                else
+                    this.getElementsByTagName('ul')[0].style.display = 'block';
+            }
+        
+    </script>
+</body>
+</html>

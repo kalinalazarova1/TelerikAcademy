@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Colored Textarea</title>
+    <link rel='stylesheet' href='spectrum.css' /> <!--supports IE9 and later and Firefox-->
+    <script type='text/javascript' src="jquery-1.9.1.js"></script>
+    <script type='text/javascript' src='spectrum.js'></script>              
+</head>
+<body>
+    <!--Create a text area and two inputs with type="color"
+        Make the font color of the text area as the value of the first color input
+        Make the background color of the text area as the value of the second input-->
+    <label for="font">Please input a color for the font:</label><br />
+    <input type="color" id="font" value="#000" onchange="changeFontColor(createTextarea())" /><br />
+    <label for="background">Please input a color for the background:</label><br />
+    <input type="color" id="background" value="#000" onchange="changeBackground(createTextarea())" /><br />
+    <script>
+        window.onload = function () {
+            document.getElementById("font").focus();
+        }
+
+        function createTextarea() {             //returns new textarea if not present or returns the first of the existing
+            var tArea = document.getElementsByTagName("textarea")[0];
+            if (tArea === undefined) {
+                tArea = document.createElement("textarea");
+                tArea.style.fontSize = "18px";
+                tArea.style.fontWeight = "bold";
+                tArea.rows = 20;
+                tArea.style.width = "500px";
+                tArea.innerHTML = "Sample text";
+                document.body.appendChild(tArea);
+            }
+            return tArea;
+        }
+
+        function changeBackground(element) {
+            element.style.backgroundColor = document.getElementById("background").value;
+        }
+
+        function changeFontColor(element) {
+            element.style.color = document.getElementById("font").value;
+        }
+    </script>
+</body>
+</html>
