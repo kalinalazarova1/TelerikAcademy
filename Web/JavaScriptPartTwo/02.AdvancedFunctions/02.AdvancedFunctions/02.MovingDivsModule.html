@@ -1,0 +1,107 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Moving Divs Module</title>
+    <style>
+        .circles {
+            width: 50px;
+            height: 50px;
+            border-radius: 50px;
+            position: absolute;
+            border: 2px solid white;
+            text-align: center;
+            line-height: 50px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <!--Create a module that works with moving div elements. Implement functionality for:
+        Add new moving div element to the DOM
+        The module should generate random background, font and border colors for the div element
+        All the div elements are with the same width and height
+        The movements of the div elements can be either circular or rectangular
+        The elements should be moving all the time-->
+    <button id="cir" >Add move in circle div</button>
+    <button id="rect">Add move in square div</button>
+    <div id="wrapper"></div>
+    <script>
+        var movingShapes = (function () {
+            var ellipse = [];
+            var square = [];
+            function randomColor() {
+                return "rgb(" + parseInt(Math.random() * 256) + "," + parseInt(Math.random() * 256) + "," + parseInt(Math.random() * 256) + ")";
+            }
+
+            function moveCircleDiv(angle, singleDiv) {
+                angle = angle + 0.05; //speed 1 radian per second;
+                var r = 100,         //radius of circle path
+                    xCenter = 200,   //x location of circle path centre on screen
+                    yCenter = 400,   //y location of circle path centre on screen
+                    x = Math.floor(xCenter + (r * Math.cos(angle))),
+                    y = Math.floor(yCenter + (r * Math.sin(angle)));
+                singleDiv.style.top = x + "px"; //set divs new coordinates
+                singleDiv.style.left = y + "px"; //set divs new coordinates
+
+                setTimeout(function () { //repeats the function moveDiv after 100 miliseconds 
+                        moveCircleDiv(angle, singleDiv);
+                }, 100);
+            }
+
+            function moveRectDiv(dir, offset, singleDiv) {
+                var xStart = 100,       //left of the rectangle
+                    yStart = 800,       //top of the rectangle
+                    rectSideA = 400,    //rectangle orbit sides
+                    rectSideB = 200;
+                offset += 5;
+                if (offset == rectSideA && dir % 2 == 0 || offset == rectSideB && dir % 2 == 1) {
+                    dir++;
+                    dir %= 4;
+                    offset = 0;
+                }
+         
+                switch (dir) {
+                    case 0: y = yStart + offset; x = xStart; break;
+                    case 1: x = xStart + offset; y = yStart + rectSideA; break;
+                    case 2: y = yStart + rectSideA - offset; x = xStart + rectSideB; break;
+                    case 3: x = xStart + rectSideB - offset; y = yStart; break;
+                }
+                singleDiv.style.top = x + "px"; //set divs new coordinates
+                singleDiv.style.left = y + "px"; //set divs new coordinates
+
+                setTimeout(function () { //repeats the function moveDiv after 100 miliseconds 
+                    moveRectDiv(dir, offset, singleDiv);
+                }, 100);
+            }
+
+            function add(e) {
+                var wrapper = document.getElementById("wrapper");
+                singleDiv = document.createElement("div");
+                singleDiv.className = "circles";
+                singleDiv.style.backgroundColor = randomColor();
+                singleDiv.style.color = randomColor();
+                singleDiv.style.border = "2px solid " + randomColor();
+                singleDiv.innerHTML = "DIV";
+                wrapper.appendChild(singleDiv);
+                if (event.target == document.getElementById('rect')) {
+                    square.push(singleDiv);
+                    moveRectDiv(0, 0, singleDiv);
+                }
+                else {
+                    ellipse.push(singleDiv);
+                    moveCircleDiv(0, singleDiv);
+                }
+            }
+
+            return {
+                add: add
+            }
+        })();
+
+        var btnCir = document.getElementById('cir');
+        btnCir.addEventListener('click', movingShapes.add, false);
+        var btnRect = document.getElementById('rect');
+        btnRect.addEventListener('click', movingShapes.add, false);
+    </script>
+</body>
+</html>
