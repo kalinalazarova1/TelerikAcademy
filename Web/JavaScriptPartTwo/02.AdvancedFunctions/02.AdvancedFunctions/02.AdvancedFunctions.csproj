@@ -67,7 +67,9 @@
   <ItemGroup>
     <Content Include="01.DomModule.html" />
     <Content Include="02.MovingDivsModule.html" />
-    <Content Include="03.SpecialConsole.html" />
+    <Content Include="03.SpecialConsoleModule.html" />
+    <Content Include="04.TreeViewComponentModule.html" />
+    <Content Include="rightarrow.jpg" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

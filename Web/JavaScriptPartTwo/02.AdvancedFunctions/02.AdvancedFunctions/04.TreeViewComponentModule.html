@@ -1,0 +1,89 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Tree View Component Module</title>
+    <style>
+        ul {
+            list-style-image: url(rightarrow.jpg);
+        }
+
+        li > ul {
+            display: none;
+        }
+
+        a, a:visited, a:active {
+            text-decoration: none;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <!--4.* Wrap the TreeView from the previous presentation into a module-->
+    <div class="tree-view"></div>
+    <script>
+        function toggleDisplay(event) {
+            if (this.getElementsByTagName('ul').length == 0) return;
+            if ((this === event.target || this === event.target.parentNode) 
+                && this.getElementsByTagName('ul')[0].style.display == 'block')
+                this.getElementsByTagName('ul')[0].style.display = 'none';
+            else
+                this.getElementsByTagName('ul')[0].style.display = 'block';
+        }
+
+        var controls = (function () {
+            function treeView(selector) {
+                var list = document.createElement('ul');
+                var root = document.querySelector(selector);
+                root.appendChild(list);
+                return list;
+            }
+            return {
+                treeView : treeView
+            }
+        })();
+
+        Node.prototype.addNode = function () {
+            var listItem = document.createElement('li');
+            listItem.display = 'block';
+            if (this.tagName == 'UL') {
+                this.appendChild(listItem);
+            }
+            else if (this.tagName == 'LI' && this.getElementsByTagName('UL').length > 0) {
+                this.getElementsByTagName('UL')[0].appendChild(listItem);
+            }
+            else if (this.tagName == 'LI') {
+                var list = document.createElement('ul');
+                list.appendChild(listItem);
+                this.appendChild(list);
+            }
+            return listItem;
+        }
+
+        Node.prototype.content = function (text) {
+            var anchor = document.createElement('a');
+            anchor.href = '#';
+            this.appendChild(anchor);
+            this.lastChild.innerHTML = text;
+        }
+
+        var treeView = controls.treeView("div.tree-view");
+        var jsnode=treeView.addNode();
+        jsnode.content("JavaScript");
+        var js1subnode = jsnode.addNode();
+        js1subnode.content("JavaScript - part 1");
+        var js2subnode = jsnode.addNode();
+        js2subnode.content("JavaScript - part 2");
+        var jslibssubnode = jsnode.addNode();
+        jslibssubnode.content("JS Libraries");
+        var jsframeworksnode = jsnode.addNode();
+        jsframeworksnode.content("JS Frameworks and UI");
+        var webnode = treeView.addNode();
+        webnode.content("Web");
+
+        var all = document.getElementsByTagName('li');
+        for (var i = 0; i < all.length; i++) {
+            all[i].addEventListener("click", toggleDisplay, false);
+        }
+    </script>
+</body>
+</html>
