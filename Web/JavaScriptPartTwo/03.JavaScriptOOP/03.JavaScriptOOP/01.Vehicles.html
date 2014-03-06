@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Vehicles</title>
+    <meta charset="utf-8" />
+    <link href="js-console.min.css" rel="stylesheet" />
+    
+</head>
+<body>
+    <!--write a hierarchy of classes to simulate vehicles.
+        ­All vehicles should have speed and propulsion units (things which make them move)
+        and a Accelerate method, which should update their speed by summing it with the acceleration of their propulsion units.
+        ­Each propulsion unit can produce acceleration (change in speed). There should be three types of propulsion units -
+        wheels, propelling nozzles and propellers.
+        ­A wheel should have a radius and the acceleration it produces should be equal to its perimeter.
+        ­A propelling nozzle should have power and an afterburner switch. The acceleration the nozzle should produce as much acceleration
+        as it has power, but if the afterburner is on it should produce double acceleration.
+        ­A propeller should have a number of fins and a spin direction. The acceleration a propeller produces should by default be equal
+        to the number of fins it has. The spin direction should be clockwise and counter-clockwise. If the spin direction is counter-clockwise,
+        the acceleration the propeller produces should be negative, if the spin direction is clockwise, the acceleration should be positive.
+        ­There should be land, air and water vehicles.
+        Land vehicles should have 4 wheels.
+        Air vehicles should have 1 propelling nozzles. ­Air vehicles should have the ability to switch on/off their afterburners.
+        Water vehicles should have a customizable number of propellers (passed in the constructor). ­Water vehicles should have the ability to
+        change the spin direction of their propellers.
+        Amphibious vehicle should both have a propeller (so it can move on water) and wheels (so it can move on land).
+        The amphibious vehicle should be able to switch between land and water mode and it's speed property and Accelerate method should
+        respectively depend on its wheels in the first case and on its propeller in the second case.-->
+
+    <div id="js-console"></div>                             
+    <script src="vehicles.js"></script>
+    <script src="js-console.js"></script>    
+    <script> 
+        var car = new vehicles.LandVehicle(new vehicles.Wheel(6),       
+                                           new vehicles.Wheel(6),
+                                           new vehicles.Wheel(6),
+                                           new vehicles.Wheel(6));
+            jsConsole.writeLine("LandVehicle: " + JSON.stringify(car));     //TODO: Check inherit and extend functions
+            jsConsole.writeLine("Speed before acceleration: " + car.speed);
+            car.accelerate();
+            jsConsole.writeLine("After acceleration: " + car.speed);
+            jsConsole.writeLine();
+
+            var airVehicle = new vehicles.AirVehicle(new vehicles.Nozzle(100));
+            jsConsole.writeLine("AirVehicle: " + JSON.stringify(airVehicle));
+
+            jsConsole.writeLine("Speed before acceleration: " + airVehicle.speed);
+            airVehicle.accelerate();
+            jsConsole.writeLine("Speed after acceleration with afterburner off: " + airVehicle.speed);
+            airVehicle.propulsionUnits[0].toggleAfterburnerSwitch();
+            airVehicle.accelerate();
+            jsConsole.writeLine("Speed after acceleration with afterburner on: " + airVehicle.speed);
+            jsConsole.writeLine();
+
+            var boat = new vehicles.WaterVehicle(new vehicles.Propeller(20), new vehicles.Propeller(30));
+            jsConsole.writeLine("WaterVehicle: " + JSON.stringify(boat));
+            jsConsole.writeLine("Speed before acceleration with clockwise spin: " + boat.speed);
+            boat.accelerate();
+            jsConsole.writeLine("Speed after acceleration with clockwise spin: " + boat.speed);
+            boat.propulsionUnits.forEach(function (unit) { unit.changeSpin() });
+            boat.accelerate();
+            jsConsole.writeLine("Speed after acceleration with anti-clockwise spin: " + boat.speed);
+            jsConsole.writeLine();
+
+            var amphibia = new vehicles.AmphibiousVehicle([new vehicles.Wheel(4),
+                                                           new vehicles.Wheel(4),
+                                                           new vehicles.Wheel(4),
+                                                           new vehicles.Wheel(4)],
+                                                          [new vehicles.Propeller(10),
+                                                           new vehicles.Propeller(20)]);
+
+            jsConsole.writeLine("AmphibiousVehicle: " + JSON.stringify(amphibia));
+            jsConsole.writeLine("Speed in land mode before acceleration with clockwise spin: " + amphibia.speed);
+            amphibia.accelerate();
+            jsConsole.writeLine("Speed in land mode after acceleration with clockwise spin: " + amphibia.speed);
+            amphibia.toggleMode();
+            amphibia.propulsionUnits.forEach(function (unit) { unit.changeSpin() });
+            jsConsole.writeLine("Speed before acceleration in water mode: " + amphibia.speed);
+            amphibia.accelerate();
+            jsConsole.writeLine("Speed after acceleration in water mode with anti-clockwise spin: " + amphibia.speed);
+            jsConsole.writeLine();
+    </script>
+</body>
+</html>
