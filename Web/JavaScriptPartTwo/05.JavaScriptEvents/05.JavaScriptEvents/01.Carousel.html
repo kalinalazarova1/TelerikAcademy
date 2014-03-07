@@ -1,0 +1,105 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Desert Carousel</title>
+    <meta charset="utf-8" />
+    <style>
+        button {
+            width: 62px;
+            height: 62px;
+            border: none;
+            background: none;
+            display: inline-block;
+            vertical-align: middle;
+        }
+            button#slide, button#stop {
+                background-color: darkgray;
+                border-radius: 5px;
+                display: inline-block;
+                margin: 10px -440px 10px 450px;
+                width: 200px;
+                height: 30px;
+            }
+        div.visible {
+            display: inline-block;
+            vertical-align: middle;
+            width: 140px;
+            height: 75px;
+            border: 1px solid gray;
+            margin: auto;
+            background-color: gray;
+        }
+        div#focused {
+            width: 560px;
+            height: 300px;
+        }
+        div#wrapper {
+            display: block;
+            background-color: lightgray;
+        }
+        img {
+            width: 100%;
+            height: 100%;
+        }
+        div.visible > img{
+            opacity: 0.4;
+        }
+        div#focused > img {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <button class="left"><img src="images/left.png" class="left" alt="left" /></button>
+        <div class="visible"><img src="" alt="image" /></div>
+        <div class="visible"><img src="" alt="image" /></div>
+        <div id="focused" class="visible"><img src="" alt="image" /></div>
+        <div class="visible"><img src="" alt="image" /></div>
+        <div class="visible"><img src="" alt="image" /></div>
+        <button class="right"><img src="images/right.png" class="right" alt="right" /></button>
+        <button id="slide">Start Slideshow</button><button id="stop">End Slideshow</button>
+    </div>
+    <script>
+        var sourceLength = 20;
+        var btns = document.getElementById('wrapper').getElementsByTagName('button');
+        for (var i = 0, len = btns.length; i < len; i++)
+            btns[i].addEventListener('click', moveCarousel, false);
+        document.getElementById('slide').addEventListener('click', startSlideShow, false);
+        document.getElementById('stop').addEventListener('click', stopSlideShow, false);
+        var shown = document.getElementsByClassName('visible');
+        var start = 0;
+        for (var i = 0, len = shown.length; i < len; i++) {
+            var test = shown[i].firstChild.src = "images/" + (i + 1) + ".jpg";
+        }
+
+        function moveCarousel(event) {
+            if (event != null && (event.target === document.getElementsByClassName('right')[0] || event.target === document.getElementsByClassName('right')[1])) {
+                start++;
+                if (start == sourceLength) start = 0;   
+            }
+            else {
+                start--;
+                if (start == -1) start = sourceLength - 1
+            }
+            for (var p = start, j = 0; j < shown.length; p++, j++) {
+                if (p == sourceLength) p = 0;
+                shown[j].firstChild.src = "images/" + (p + 1) + ".jpg";
+            }
+        }
+
+        function startSlideShow() {
+            document.getElementById('slide').removeEventListener('click', startSlideShow, false);
+            sliding = setInterval(function () {
+                moveCarousel(null)
+            }, 1000);
+
+        }
+
+        function stopSlideShow() {
+            clearInterval(sliding);
+            document.getElementById('slide').addEventListener('click', startSlideShow, false);
+        }
+    </script>
+</body>
+</html>
