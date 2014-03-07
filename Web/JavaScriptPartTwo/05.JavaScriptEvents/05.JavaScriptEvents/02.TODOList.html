@@ -1,0 +1,96 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>TODO List</title>
+    <meta charset="utf-8" />
+    <style>
+        h1, p, button, div, input{
+            font-family: 'Comic Sans MS';
+            margin: 7px 7px 7px 20px;
+        }
+        button{
+            border-radius: 5px;
+            background-color: greenyellow;
+            color: black;
+            font-weight: bold;
+            float: left;
+            display: block;
+            width: 140px;
+            height: 30px;
+            border: 1px solid #333;
+        }
+        input[type = text]{
+            width: 300px;
+        }
+        div#container {
+            background-color: #8a8a8a;
+            border-radius: 10px;
+            border: 1px solid #333;
+            box-shadow: 0px 0px 20px black;
+            width: 350px;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <!--Create a TODO list with the following UI controls
+        Form input for new Item
+        Button for adding the new Item
+        Button for deleting some item
+        Show and Hide Button-->
+    <div id="container">
+        <h1>TODO List</h1>
+        <input type="text" id="item" placeholder="Type here TODO item..." />
+        <button id="add">Add</button>
+        <button id="del">Delete Selected</button>
+        <button id="hide">Hide Selected</button>
+        <button id="show">Show All</button>
+        <div id="list"><p>&nbsp;</p></div>
+        <script>
+            window.onload = function () {
+                document.getElementById('add').addEventListener('click', add, false);
+                document.getElementById('hide').addEventListener('click', hide, false);
+                document.getElementById('show').addEventListener('click', show, false);
+                document.getElementById('del').addEventListener('click', del, false);
+
+                function add() {
+                    var item = document.createElement('p');
+                    var check = document.createElement('input');
+                    check.type = 'checkbox';
+                    item.appendChild(check);
+                    itemContent = document.createElement('label');
+                    itemContent.innerHTML = document.getElementById('item').value;
+                    item.appendChild(itemContent);
+                    document.getElementById('list').appendChild(item);
+                    document.getElementById('item').value = '';
+                }
+
+                function getSelected() {
+                    var result = [];
+                    var all = document.getElementById('list').getElementsByTagName('input');
+                    for (var i = 0, len = all.length; i < len; i++)
+                        if (all[i].checked && all[i].parentElement.style.display != 'none') 
+                            result.push(all[i].parentElement);
+                    return result;
+                }
+
+                function hide() {
+                    var arr = getSelected();
+                    arr.forEach(function (unit) { unit.style.display = 'none'; });
+                }
+
+                function show() {
+                    var arr = document.getElementById('list').getElementsByTagName('p');
+                    for (var i = 0, len = arr.length; i < len; i++) 
+                        arr[i].style.display = 'block';
+                }
+
+                function del() {
+                    var arr = getSelected();
+                    arr.forEach(function (unit) { unit.parentElement.removeChild(unit); });
+                }
+            }
+        </script>
+    </div>
+</body>
+</html>

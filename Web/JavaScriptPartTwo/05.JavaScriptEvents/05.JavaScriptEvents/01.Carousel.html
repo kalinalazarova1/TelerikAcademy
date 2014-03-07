@@ -50,6 +50,7 @@
     </style>
 </head>
 <body>
+    <!--Create a Simple JS Carousel with N images and two arrows for image control -->
     <div id="wrapper">
         <button class="left"><img src="images/left.png" class="left" alt="left" /></button>
         <div class="visible"><img src="" alt="image" /></div>
@@ -70,7 +71,7 @@
         var shown = document.getElementsByClassName('visible');
         var start = 0;
         for (var i = 0, len = shown.length; i < len; i++) {
-            var test = shown[i].firstChild.src = "images/" + (i + 1) + ".jpg";
+            shown[i].firstChild.src = "images/" + (i + 1) + ".jpg";
         }
 
         function moveCarousel(event) {
