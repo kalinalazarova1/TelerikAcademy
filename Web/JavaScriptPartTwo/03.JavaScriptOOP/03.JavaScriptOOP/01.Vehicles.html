@@ -47,7 +47,7 @@
             jsConsole.writeLine("Speed before acceleration: " + airVehicle.speed);
             airVehicle.accelerate();
             jsConsole.writeLine("Speed after acceleration with afterburner off: " + airVehicle.speed);
-            airVehicle.propulsionUnits[0].toggleAfterburnerSwitch();
+            airVehicle.toggleAfterburnerSwitch();
             airVehicle.accelerate();
             jsConsole.writeLine("Speed after acceleration with afterburner on: " + airVehicle.speed);
             jsConsole.writeLine();
@@ -57,7 +57,7 @@
             jsConsole.writeLine("Speed before acceleration with clockwise spin: " + boat.speed);
             boat.accelerate();
             jsConsole.writeLine("Speed after acceleration with clockwise spin: " + boat.speed);
-            boat.propulsionUnits.forEach(function (unit) { unit.changeSpin() });
+            boat.changePropellersSpin();
             boat.accelerate();
             jsConsole.writeLine("Speed after acceleration with anti-clockwise spin: " + boat.speed);
             jsConsole.writeLine();
@@ -74,7 +74,7 @@
             amphibia.accelerate();
             jsConsole.writeLine("Speed in land mode after acceleration with clockwise spin: " + amphibia.speed);
             amphibia.toggleMode();
-            amphibia.propulsionUnits.forEach(function (unit) { unit.changeSpin() });
+            amphibia.changePropellersSpin();
             jsConsole.writeLine("Speed before acceleration in water mode: " + amphibia.speed);
             amphibia.accelerate();
             jsConsole.writeLine("Speed after acceleration in water mode with anti-clockwise spin: " + amphibia.speed);

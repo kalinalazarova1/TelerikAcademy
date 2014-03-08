@@ -1,6 +1,6 @@
 ﻿Function.prototype.inherit = function (parent) {        //simple inheritence
     this.prototype = new parent();
-    //this.prototype.constructor = parent;
+    this.prototype.constructor = this;
 }
 
 Function.prototype.extend = function (parent) {         //multiple inheritence gets specified properties from parent
@@ -19,6 +19,8 @@ var vehicles = (function () {
     PropulsionUnit.prototype.createAcceleration = function () {
     }
 
+    Wheel.inherit(PropulsionUnit);
+
     function Wheel(radius) {
         PropulsionUnit.apply(this, arguments);
         this.radius = radius;
@@ -28,9 +30,10 @@ var vehicles = (function () {
         return this.radius * Math.PI * 2;
     }
 
-    Wheel.extend(PropulsionUnit);
+    Nozzle.inherit(PropulsionUnit);
 
     function Nozzle(power) {
+        PropulsionUnit.apply(this, arguments);
         this.power = power;
         this.afterburnerOn = false;
     }
@@ -43,9 +46,10 @@ var vehicles = (function () {
         this.afterburnerOn = !this.afterburnerOn;
     }
 
-    Nozzle.extend(PropulsionUnit);
+    Propeller.inherit(PropulsionUnit);
 
     function Propeller(finCount) {
+        PropulsionUnit.apply(this, arguments);
         this.finCount = finCount;
         this.clockwiseSpin = true;
     }
@@ -58,8 +62,6 @@ var vehicles = (function () {
         this.clockwiseSpin = !this.clockwiseSpin;
     }
 
-    Propeller.extend(PropulsionUnit);
-
     function Vehicle() {
         this.speed = 0;
         this.propulsionUnits = [];
@@ -71,21 +73,26 @@ var vehicles = (function () {
         var sum = 0;
         for (var i = 0; i < this.propulsionUnits.length; i++)
             sum += this.propulsionUnits[i].createAcceleration();
-        console.log(sum);
         this.speed += sum;
     }
+
+    LandVehicle.inherit(Vehicle);
 
     function LandVehicle(wheel1, wheel2, wheel3, wheel4) {
         Vehicle.apply(this, [wheel1, wheel2, wheel3, wheel4]);
     }
 
-    LandVehicle.inherit(Vehicle)
+    AirVehicle.inherit(Vehicle);
 
     function AirVehicle(nozzle) {
         Vehicle.call(this, nozzle);
     }
 
-    AirVehicle.inherit(Vehicle);
+    AirVehicle.prototype.toggleAfterburnerSwitch = function () {
+        this.propulsionUnits[0].toggleAfterburnerSwitch();
+    }
+
+    WaterVehicle.inherit(Vehicle);
 
     function WaterVehicle(propellers) {
         var props = [];
@@ -94,21 +101,23 @@ var vehicles = (function () {
         Vehicle.apply(this, props);
     }
 
-    WaterVehicle.inherit(Vehicle);
+    WaterVehicle.prototype.changePropellersSpin = function () {
+        this.propulsionUnits.forEach(function (unit) { unit.changeSpin() });
+    }
+
+    AmphibiousVehicle.inherit(WaterVehicle);
+    AmphibiousVehicle.extend(LandVehicle);
 
     function AmphibiousVehicle(wheels, propellers) {
         this.landPropulsionUnits = wheels;
         this.waterPropulsionUnits = propellers;
         this.propulsionUnits = this.landPropulsionUnits;
     }
-
-    AmphibiousVehicle.inherit(Vehicle);
+    
     AmphibiousVehicle.prototype.toggleMode = function () {
         this.propulsionUnits = (this.propulsionUnits == this.landPropulsionUnits ? this.waterPropulsionUnits : this.landPropulsionUnits);
         this.speed = 0;
-
     }
-    AmphibiousVehicle.extend(WaterVehicle);
 
     return {
         LandVehicle: LandVehicle,
@@ -117,6 +126,6 @@ var vehicles = (function () {
         AmphibiousVehicle: AmphibiousVehicle,
         Wheel: Wheel,
         Nozzle: Nozzle,
-        Propeller: Propeller
+        Propeller: Propeller,
     };
 })();
