@@ -66,10 +66,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="01.TrashBin.html" />
+    <Content Include="02.ShivLocalSessionStorage.html" />
     <Content Include="image\closed.png" />
     <Content Include="image\open.png" />
     <Content Include="image\tiles.jpg" />
     <Content Include="image\trash.png" />
+    <Content Include="scripts\cookies.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
