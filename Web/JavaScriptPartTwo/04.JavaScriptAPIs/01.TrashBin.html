@@ -71,7 +71,7 @@
                 document.getElementById('wrapper').innerHTML = '';
                 document.getElementById('timer').innerHTML = '';
                 var scoreBoard = document.createElement('table');
-                //localStorage.clear();
+                //localStorage.clear();   
                 scoreBoard.id = 'score_board';
                 scoreBoard.innerHTML = '<tbody><tr><td>SCORE BOARD:</tr></th>';
                 var scores = orderScores();
@@ -116,7 +116,7 @@
 
             function createRandomTrash() {
                 var trash = document.createElement('img');
-                trash.src = 'trash.png';
+                trash.src = 'image/trash.png';
                 trash.alt = 'trash';
                 trash.style.width = '40px';
                 trash.style.position = 'absolute';

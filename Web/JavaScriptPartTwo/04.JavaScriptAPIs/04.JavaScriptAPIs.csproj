@@ -67,6 +67,8 @@
   <ItemGroup>
     <Content Include="01.TrashBin.html" />
     <Content Include="02.ShivLocalSessionStorage.html" />
+    <Content Include="04.CanvasDrawings.html" />
+    <Content Include="05.BouncingBall.html" />
     <Content Include="image\closed.png" />
     <Content Include="image\open.png" />
     <Content Include="image\tiles.jpg" />
