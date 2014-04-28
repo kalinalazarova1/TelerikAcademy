@@ -17,16 +17,38 @@ class Program
                                {"0","X","0","0","0","0"},
                                {"0","0","0","X","X","0"},
                                {"0","0","0","X","0","X"}};
-        int depth = 0;
+        int distance = 0;
         if (GetStartingPosition(labyrinth) == null) throw new ApplicationException("The labyrinth has no starting point!");
         int row = GetStartingPosition(labyrinth).Item1;
         int col = GetStartingPosition(labyrinth).Item2;
-        
-        Move(labyrinth, row + 1, col, depth + 1);
-        Move(labyrinth, row, col + 1, depth + 1);
-        Move(labyrinth, row - 1, col, depth + 1);
-        Move(labyrinth, row, col - 1, depth + 1);
-        
+        var cells = new Queue<Cell>();
+        cells.Enqueue(new Cell(row, col, distance));
+        while (cells.Count > 0)
+        {
+            distance++;
+            var current = cells.Dequeue();
+            if (labyrinth[current.Row, current.Col] != "*")
+            {
+                labyrinth[current.Row, current.Col] = current.Distance.ToString();
+            }
+            if (IsPossible(labyrinth, new Cell(current.Row + 1, current.Col, current.Distance + 1)))
+            {
+                cells.Enqueue(new Cell(current.Row + 1, current.Col, current.Distance + 1));
+            }
+            if (IsPossible(labyrinth, new Cell(current.Row, current.Col + 1, current.Distance + 1)))
+            {
+                cells.Enqueue(new Cell(current.Row, current.Col + 1, current.Distance + 1));
+            }
+            if (IsPossible(labyrinth, new Cell(current.Row - 1, current.Col, current.Distance + 1)))
+            {
+                cells.Enqueue(new Cell(current.Row - 1, current.Col, current.Distance + 1));
+            }
+            if (IsPossible(labyrinth, new Cell(current.Row, current.Col - 1, current.Distance + 1)))
+            {
+                cells.Enqueue(new Cell(current.Row, current.Col - 1, current.Distance + 1));
+            }
+        }
+
         for (int r = 0; r < labyrinth.GetLength(0); r++)
         {
             for (int c = 0; c < labyrinth.GetLength(1); c++)
@@ -35,18 +57,6 @@ class Program
             }
             Console.WriteLine();
         }
-    }
-
-    static void Move(string[,] labyrinth, int r, int c, int depth)
-    {
-        if (r >= labyrinth.GetLength(0) || r < 0 || c >= labyrinth.GetLength(1) || c < 0 ) return;
-        if (labyrinth[r, c] == "X" || labyrinth[r, c] == "*") return;
-        if (labyrinth[r, c] != "0" && int.Parse(labyrinth[r, c]) <= depth) return;
-        labyrinth[r, c] = depth.ToString();
-        Move(labyrinth, r + 1, c, depth + 1);
-        Move(labyrinth, r, c + 1, depth + 1);
-        Move(labyrinth, r - 1, c, depth + 1);
-        Move(labyrinth, r, c - 1, depth + 1);
     }
 
     static Tuple<int, int> GetStartingPosition(string[,] labyrinth)
@@ -62,5 +72,15 @@ class Program
             }
         }
         return null;
+    }
+
+    static bool IsPossible(string[,] labyrinth, Cell cur)
+    {
+        if ((cur.Row < labyrinth.GetLength(0) && cur.Row >= 0 && cur.Col < labyrinth.GetLength(1) && cur.Col >= 0)
+            && labyrinth[cur.Row, cur.Col] == "0")
+        {
+            return true;
+        }
+        return false;
     }
 }

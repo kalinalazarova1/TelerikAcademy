@@ -31,7 +31,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "12.Stack", "12.StackTest\12
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "13.LinkedQueue", "13.LinkedQueue\13.LinkedQueue.csproj", "{05434476-5347-40D0-A509-CC93CE18C5C2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "14.LabyrinthPath", "14.LabyrinthPath\14.LabyrinthPath.csproj", "{1DE92D24-F1B2-4981-9AE6-CBE15C34629C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "14.LabyrinthWithRecursion", "14.LabyrinthPath\14.LabyrinthWithRecursion.csproj", "{1DE92D24-F1B2-4981-9AE6-CBE15C34629C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "14.LabyrinthWithQueue", "14.LabyrinthWithQueue\14.LabyrinthWithQueue.csproj", "{1252B6A8-761F-4D7F-9B9B-F3153207592D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -99,6 +101,10 @@ Global
 		{1DE92D24-F1B2-4981-9AE6-CBE15C34629C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1DE92D24-F1B2-4981-9AE6-CBE15C34629C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1DE92D24-F1B2-4981-9AE6-CBE15C34629C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1252B6A8-761F-4D7F-9B9B-F3153207592D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1252B6A8-761F-4D7F-9B9B-F3153207592D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1252B6A8-761F-4D7F-9B9B-F3153207592D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1252B6A8-761F-4D7F-9B9B-F3153207592D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
