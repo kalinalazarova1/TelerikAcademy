@@ -8,31 +8,11 @@
     <!--Write an expression that checks for given integer if its third digit (right-to-left) is 7. E. g. 1732  true.-->
     <div id="js-console">
         <label for="number-input">Input integer number greater than 99 and press Enter: </label>
-        <input type="text" id="number-input" onkeydown="OnEnterKeyPressed(event)" />
+        <input type="text" id="number-input" onkeydown="onEnterKeyPressed(event)" />
         <br />
     </div>
-    <script src="js-console.js"></script>
-    <script>
-        window.onload = function () {
-            document.getElementById("number-input").focus();
-        }
-
-        function ThirdDigitCheck() {
-            var number = jsConsole.readInteger("input");
-            if (!number || number < 100) {
-                jsConsole.writeLine("The entered number is not valid.");
-            }
-            else {
-                jsConsole.writeLine("The third digit of " + number + " is: " + parseInt((number / 100) % 10));
-            }
-        }
-
-        function OnEnterKeyPressed(event) {
-            if (event.keyCode == 13) {
-                ThirdDigitCheck();
-            }
-        }
-    </script>
+    <script src="scripts/js-console.js"></script>
+    <script src="scripts/04.ThirdDigit.js"></script>
 </body>
 
 </html>

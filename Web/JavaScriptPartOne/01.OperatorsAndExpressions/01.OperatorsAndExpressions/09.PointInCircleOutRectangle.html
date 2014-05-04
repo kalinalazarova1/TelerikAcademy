@@ -9,44 +9,14 @@
         and out of the rectangle R(top=1, left=-1, width=6, height=2).-->
     <div id="js-console">
         <label for="number-input1">Input point x coordinate and press Enter: </label>
-        <input type="text" id="number-input1" onkeydown="OnEnterKeyPressed(event)" />
+        <input type="text" id="number-input1" onkeydown="onEnterKeyPressed(event)" />
         <br />
         <label for="number-input2">Input point y coordinate and press Enter: </label>
-        <input type="text" id="number-input2" onkeydown="OnEnterKeyPressed(event)" />
+        <input type="text" id="number-input2" onkeydown="onEnterKeyPressed(event)" />
         <br />
     </div>
-    <script src="js-console.js"></script>
-    <script>
-        window.onload = function () {
-            document.getElementById("number-input1").focus();
-        }
-
-        function PointInCircleOutRectangle() {
-            var x = jsConsole.readFloat("input#number-input1");
-            var y = jsConsole.readFloat("input#number-input2");
-            if ((!x && x !== 0) || (!y && y !== 0)) {
-                jsConsole.writeLine("The entered numbers are not valid.");
-            }
-            else {
-                var inCircle = (Math.sqrt((x - 1) * (x - 1) + (y - 1) * (y - 1)) - 3) <= 0;
-                var outRectangle = (x < -1) || (x > 5) || (y < -1) || (y > 1);
-                jsConsole.writeLine("The point (" + x + ", " + y + ") is "
-                    + (inCircle ? "in" : "out of") + " the circle and "
-                    + (outRectangle ? "out of" : "in") + " the rectangle.");
-            }
-        }
-
-        function OnEnterKeyPressed(event) {
-            if (event.keyCode == 13) {
-                if (document.activeElement == document.getElementById("number-input1")) {
-                    document.getElementById("number-input2").focus();
-                }
-                else {
-                    PointInCircleOutRectangle();
-                }
-            }
-        }
-    </script>
+    <script src="scripts/js-console.js"></script>
+    <script src="scripts/09.PointInCircleOutRectangle.js"></script>
 </body>
 
 </html>

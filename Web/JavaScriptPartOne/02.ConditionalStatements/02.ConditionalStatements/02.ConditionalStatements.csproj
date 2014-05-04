@@ -58,6 +58,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="03.BiggestInteger.html" />
+    <Content Include="scripts\04.SortThreeRealNumbers.js" />
+    <Content Include="JSLintNet.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -73,7 +75,14 @@
     <Content Include="06.QuadraticEquation.html" />
     <Content Include="07.BiggestFromFive.html" />
     <Content Include="08.EnglishNumbers.html" />
-    <Content Include="js-console.js" />
+    <Content Include="scripts\01.SwapIntegers.js" />
+    <Content Include="scripts\02.ProductSign.js" />
+    <Content Include="scripts\03.BiggestInteger.js" />
+    <Content Include="scripts\05.EnglishDigit.js" />
+    <Content Include="scripts\06.QuadraticEquation.js" />
+    <Content Include="scripts\07.BiggestFromFive.js" />
+    <Content Include="scripts\08.EnglishNumbers.js" />
+    <Content Include="scripts\js-console.js" />
     <Content Include="js-console.min.css" />
     <Content Include="Web.config" />
   </ItemGroup>

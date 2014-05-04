@@ -1,0 +1,8 @@
+﻿{
+  "ignore": [],
+  "options": {
+    "predef": {
+      "console": false
+    }
+  }
+}

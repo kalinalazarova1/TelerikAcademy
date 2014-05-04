@@ -1,0 +1,14 @@
+﻿{
+  "ignore": [
+    "\\scripts\\js-console.js"
+  ],
+  "options": {
+    "predef": {
+      "jsConsole": false
+    },
+    "browser": true,
+    "plusplus": true,
+    "sloppy": true
+  },
+  "runOnSave": true
+}

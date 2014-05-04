@@ -9,31 +9,11 @@
          (without remainder) by 7 and 5 in the same time.-->
     <div id="js-console">
         <label for="number-input">Input integer number and press Enter: </label>
-        <input type="text" id="number-input" onkeydown="EnterKeyPressed(event)" />
+        <input type="text" id="number-input" onkeydown="enterKeyPressed(event)" />
         <br />
     </div>
-    <script src="js-console.js"></script>
-    <script>
-        window.onload = function () {
-            document.getElementById("number-input").focus();
-        }
-
-        function DivideByFiveAndSeven() {
-            var number = jsConsole.readInteger("input");
-            if (!number && number !== 0) {
-                jsConsole.writeLine("The entered number is not valid.");
-            }
-            else {
-                jsConsole.writeLine("The number " + number + " could" + (number % 35 ? " not " : " ") + "be divided by 5 and 7 at the same time.");
-            }
-        }
-
-        function EnterKeyPressed(event) {
-            if (event.keyCode == 13) {
-                DivideByFiveAndSeven();
-            }
-        }
-    </script>
+    <script src="scripts/js-console.js"></script>
+    <script src="scripts/02.DividedByFiveAndSeven.js"></script>
 </body>
 
 </html>

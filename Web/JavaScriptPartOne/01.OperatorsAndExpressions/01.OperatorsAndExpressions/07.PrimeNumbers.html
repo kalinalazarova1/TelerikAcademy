@@ -8,35 +8,10 @@
     <!--Write an expression that checks if given positive integer number n (n ≤ 100) is prime. E.g. 37 is prime.-->
     <div id="js-console">
         <label for="number-input">Input integer number between 2 and 100 and press Enter: </label>
-        <input type="text" id="number-input" onkeydown="OnEnterKeyPressed(event)" />
+        <input type="text" id="number-input" onkeydown="onEnterKeyPressed(event)" />
         <br />
     </div>
-    <script src="js-console.js"></script>
-    <script>
-        window.onload = function () {
-            document.getElementById("number-input").focus();
-        }
-
-        function PrimeCheck() {
-            var number = jsConsole.readInteger("input");
-            if (!number || number > 100 || number <= 0) {
-                jsConsole.writeLine("The entered number is not valid.");
-            }
-            else if(number == 2 || number == 3 || number == 5 || number == 7){
-                jsConsole.writeLine("The number " + number + " is prime.");
-            }
-            else {
-                var isPrime = (number % 2) && (number % 3) && (number % 5) && (number % 7);
-                jsConsole.writeLine("The number " + number + " is " + (isPrime ? " " : "not ") + "prime.");
-            }
-        }
-
-        function OnEnterKeyPressed(event) {
-            if (event.keyCode == 13) {
-                PrimeCheck();
-            }
-        }
-    </script>
+    <script src="scripts/js-console.js"></script>
+    <script src="scripts/07.PrimeNumbers.js"></script>
 </body>
-
 </html>

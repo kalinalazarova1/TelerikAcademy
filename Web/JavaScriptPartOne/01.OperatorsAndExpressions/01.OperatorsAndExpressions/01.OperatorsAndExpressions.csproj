@@ -58,6 +58,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="02.DividedByFiveAndSeven.html" />
+    <Content Include="scripts\01.OddOrEven.js" />
+    <Content Include="JSLintNet.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -74,8 +76,16 @@
     <Content Include="07.PrimeNumbers.html" />
     <Content Include="08.TrapezoidArea.html" />
     <Content Include="09.PointInCircleOutRectangle.html" />
-    <Content Include="js-console.js" />
+    <Content Include="scripts\js-console.js" />
     <Content Include="js-console.min.css" />
+    <Content Include="scripts\02.DividedByFiveAndSeven.js" />
+    <Content Include="scripts\03.RectangleArea.js" />
+    <Content Include="scripts\04.ThirdDigit.js" />
+    <Content Include="scripts\05.ThirdBit.js" />
+    <Content Include="scripts\06.PointInCircle.js" />
+    <Content Include="scripts\07.PrimeNumbers.js" />
+    <Content Include="scripts\08.TrapezoidArea.js" />
+    <Content Include="scripts\09.PointInCircleOutRectangle.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
