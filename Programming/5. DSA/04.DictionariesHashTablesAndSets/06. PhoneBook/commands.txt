@@ -1,0 +1,3 @@
+﻿find(Ivanova);
+find(Ivanova, Sofia);
+find(Daniela Ivanova Petrova);
