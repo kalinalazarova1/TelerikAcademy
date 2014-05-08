@@ -7,7 +7,7 @@ Peanut|200
 White Cheese|500
 Water|500
 Sunflower Oil|100
-Rice|2000
+Rice|1000
 Salt|300
 Beans|1000
 Banana|120
