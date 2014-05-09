@@ -8,46 +8,10 @@
     <!--Write a script that finds the max and min number from a sequence of numbers-->
     <div id="js-console">
         <label for="number-input">Input sequence of numbers separated by spaces and press Enter: </label><br />
-        <input type="text" id="number-input" onkeydown="OnEnterKeyPressed(event)" />
+        <input type="text" id="number-input" onkeydown="onEnterKeyPressed(event)" />
         <br />
     </div>
-    <script src="js-console.js"></script>
-    <script>
-        window.onload = function () {
-            document.getElementById("number-input").focus();
-        }
-
-        function MinMaxNumber() {
-            var input = jsConsole.read("input");
-            if (input === "") return;
-            var arr = input.split(" ");
-            var max = parseFloat(arr[0]);
-            var min = max;
-            for (var i = 1; i < arr.length; i++) {
-                var temp = parseFloat(arr[i]);
-                if (!temp && temp !== 0 || !max && max !== 0 ) {
-                    jsConsole.writeLine("Invalid input string.");
-                    return;
-                }
-                else {
-                    if (temp > max) {
-                        max = temp;
-                    }
-                    else if(temp < min)
-                    {
-                        min = temp;
-                    }
-                }
-            }
-            jsConsole.writeLine("The minimal number is: " + min);
-            jsConsole.writeLine("The maximal number is: " + max);
-        }
-
-        function OnEnterKeyPressed(event) {
-            if (event.keyCode == 13) {
-                MinMaxNumber();
-            }
-        }
-    </script>
+    <script src="scripts/js-console.js"></script>
+    <script src="scripts/03.MinMaxSequence.js"></script>
 </body>
 </html>

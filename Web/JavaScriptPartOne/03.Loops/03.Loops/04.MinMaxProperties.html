@@ -7,24 +7,7 @@
 <body>
     <!--Write a script that finds the lexicographically smallest and largest property in document, window and navigator objects-->
     <div id="js-console"></div>
-    <script src="js-console.js"></script>
-    <script>
-        window.onload = function () {
-            MinMaxProperty(document);
-            MinMaxProperty(window);
-            MinMaxProperty(navigator);
-        }
-
-        function MinMaxProperty(myObject) {
-            var min = "";
-            var max = "";
-            for (var p in myObject) {
-                if (min === "" || p < min) min = p;
-                if (max === "" || p > max) max = p;
-                }
-            jsConsole.writeLine("Lexicographically smallest property of " + myObject + " is: " + min);
-            jsConsole.writeLine("Lexicographically largest property of " + myObject + " is: " + max);
-        }
-    </script>
+    <script src="scripts/js-console.js"></script>
+    <script src="scripts/04.MinMaxProperties.js"></script>
 </body>
 </html>

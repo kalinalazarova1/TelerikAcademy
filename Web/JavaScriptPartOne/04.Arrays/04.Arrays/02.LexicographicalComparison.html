@@ -8,46 +8,13 @@
     <!--Write a script that compares two char arrays lexicographically (letter by letter).-->
     <div id="js-console">
         <label for="number-input1">Input first array of chars separated by spaces and press Enter: </label><br />
-        <input type="text" id="number-input1" onkeydown="OnEnterKeyPressed(event)" />
+        <input type="text" id="number-input1" onkeydown="onEnterKeyPressed(event)" />
         <br />
         <label for="number-input2">Input second array of chars separated by spaces and press Enter: </label><br />
-        <input type="text" id="number-input2" onkeydown="OnEnterKeyPressed(event)" />
+        <input type="text" id="number-input2" onkeydown="onEnterKeyPressed(event)" />
         <br />
     </div>
-    <script src="js-console.js"></script>
-    <script>
-        window.onload = function () {
-            document.getElementById("number-input1").focus();
-        }
-
-        function CharsComparer() {
-            var first = jsConsole.read("input#number-input1").split(' ');
-            var second = jsConsole.read("input#number-input2").split(' ');
-            if (ArraysEqual(first,second))
-                jsConsole.writeLine("The two arrays are equal.");
-            else
-            jsConsole.writeLine("The first array is lexicografically" + (first < second ? " before " : " after ") + "the second array.");
-        }
-
-        function ArraysEqual(first, second) {
-            var i = first.length;
-            if (i != second.length) return false;
-            while (i--) {
-                if (first[i] !== second[i]) return false;
-            }
-            return true;
-        };
-
-        function OnEnterKeyPressed(event) {
-            if (event.keyCode == 13) {
-                if (document.activeElement == document.getElementById("number-input1")) {
-                    document.getElementById("number-input2").focus();
-                }
-                else {
-                    CharsComparer();
-                }
-            }
-        }
-    </script>
+    <script src="scripts/js-console.js"></script>
+    <script src="scripts/02.LexicographicalComparison.js"></script>
 </body>
 </html>

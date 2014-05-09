@@ -10,41 +10,10 @@
         smallest from the rest, move it at the second position, etc.-->
     <div id="js-console">
         <label for="number-input1">Input array of numbers separated by spaces and press Enter: </label><br />
-        <input type="text" id="number-input1" onkeydown="OnEnterKeyPressed(event)" />
+        <input type="text" id="number-input1" onkeydown="onEnterKeyPressed(event)" />
         <br />
     </div>
-    <script src="js-console.js"></script>
-    <script>
-        window.onload = function () {
-            document.getElementById("number-input1").focus();
-        }
-
-        function SelectionSort() {
-            //This version uses one array
-            var sequence = jsConsole.read("input#number-input1").split(' ');
-            var min, temp;
-            for (var i = 0; i < sequence.length; i++)
-            {
-                min = i;
-                for (var j = i; j < sequence.length; j++)
-                {
-                    if (Number(sequence[j]) < Number(sequence[min]))
-                    {
-                        min = j;
-                    }
-                }
-                temp = sequence[i];
-                sequence[i] = sequence[min];
-                sequence[min] = temp;
-            }
-            jsConsole.writeLine("The sorted array is: " + sequence.join(', '));
-        }
-
-        function OnEnterKeyPressed(event) {
-            if (event.keyCode == 13) {
-                SelectionSort();
-            }
-        }
-    </script>
+    <script src="scripts/js-console.js"></script>
+    <script src="scripts/05.SelectionSortVer2.js"></script>
 </body>
 </html>

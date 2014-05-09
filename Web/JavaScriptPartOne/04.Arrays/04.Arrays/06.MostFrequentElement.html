@@ -8,45 +8,10 @@
     <!--Write a program that finds the most frequent number in an array.-->
     <div id="js-console">
         <label for="number-input1">Input array of numbers separated by spaces and press Enter: </label><br />
-        <input type="text" id="number-input1" onkeydown="OnEnterKeyPressed(event)" />
+        <input type="text" id="number-input1" onkeydown="onEnterKeyPressed(event)" />
         <br />
     </div>
-    <script src="js-console.js"></script>
-    <script>
-        window.onload = function () {
-            document.getElementById("number-input1").focus();
-        }
-
-        function MostFrequent() {
-            var currCount = 1;
-            var maxCount = 0;
-            var maxIndex = -1;
-            var arr = jsConsole.read("input#number-input1").split(' ');
-            arr.sort();             //this sort is lexicographical but it is ok for my purpose
-            for (var i = 1; i < arr.length; i++)
-            {
-                if (arr[i] == arr[i - 1])
-                {
-                    currCount++;
-                    if (currCount > maxCount)
-                    {
-                        maxCount = currCount;
-                        maxIndex = i;
-                    }
-                }
-                else
-                {
-                    currCount = 1;
-                }
-            }
-            jsConsole.writeLine("The most frequent element in the array is " + arr[maxIndex] + " and is found " + maxCount +" times.");
-        }
-
-        function OnEnterKeyPressed(event) {
-            if (event.keyCode == 13) {
-                MostFrequent();
-            }
-        }
-    </script>
+    <script src="scripts/js-console.js"></script>
+    <script src="scripts/06.MostFrequentElement.js"></script>
 </body>
 </html>

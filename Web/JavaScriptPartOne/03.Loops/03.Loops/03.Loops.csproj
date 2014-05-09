@@ -57,6 +57,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="JSLintNet.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -69,8 +70,12 @@
     <Content Include="02.AllNotDivisibleBy3And7.html" />
     <Content Include="03.MinMaxSequence.html" />
     <Content Include="04.MinMaxProperties.html" />
-    <Content Include="js-console.js" />
+    <Content Include="scripts\js-console.js" />
     <Content Include="js-console.min.css" />
+    <Content Include="scripts\01.NumbersInRange.js" />
+    <Content Include="scripts\02.AllNotDivisibleBy3And7.js" />
+    <Content Include="scripts\03.MinMaxSequence.js" />
+    <Content Include="scripts\04.MinMaxProperties.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

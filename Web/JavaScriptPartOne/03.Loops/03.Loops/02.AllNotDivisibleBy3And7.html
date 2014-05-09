@@ -8,34 +8,10 @@
     <!--Write a script that prints all the numbers from 1 to N, that are not divisible by 3 and 7 at the same time-->
     <div id="js-console">
         <label for="number-input">Input an integer number and press Enter: </label>
-        <input type="text" id="number-input" onkeydown="OnEnterKeyPressed(event)" />
+        <input type="text" id="number-input" onkeydown="onEnterKeyPressed(event)" />
         <br />
     </div>
-    <script src="js-console.js"></script>
-    <script>
-        window.onload = function () {
-            document.getElementById("number-input").focus();
-        }
-
-        function NumbersNotDivisibleBy21() {
-            var number = jsConsole.readInteger("input");
-            if (!number && number !== 0) {
-                jsConsole.writeLine("The entered number is not valid");
-            }
-            else {
-                jsConsole.writeLine("All the numbers in the range [1, " + number + "] not divisible by 3 and 7 at the same time are:");
-                for (var i = 0; i < number; i++) {
-                    if ((i + 1) % 21 != 0)
-                        jsConsole.write((i + 1) + " ");
-                }
-            }
-        }
-
-        function OnEnterKeyPressed(event) {
-            if (event.keyCode == 13) {
-                NumbersNotDivisibleBy21();
-            }
-        }
-    </script>
+    <script src="scripts/js-console.js"></script>
+    <script src="scripts/02.AllNotDivisibleBy3And7.js"></script>
 </body>
 </html>

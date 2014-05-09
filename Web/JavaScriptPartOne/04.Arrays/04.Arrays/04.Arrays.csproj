@@ -57,6 +57,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="JSLintNet.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -73,8 +74,16 @@
     <Content Include="05.SelectionSortVer2.html" />
     <Content Include="06.MostFrequentElement.html" />
     <Content Include="07.BinarySearch.html" />
-    <Content Include="js-console.js" />
+    <Content Include="scripts\js-console.js" />
     <Content Include="js-console.min.css" />
+    <Content Include="scripts\01.IndexMultiplyBy5.js" />
+    <Content Include="scripts\02.LexicographicalComparison.js" />
+    <Content Include="scripts\03.MaxEqualSequence.js" />
+    <Content Include="scripts\04.MaxIncreasingSequence.js" />
+    <Content Include="scripts\05.SelectionSort.js" />
+    <Content Include="scripts\05.SelectionSortVer2.js" />
+    <Content Include="scripts\06.MostFrequentElement.js" />
+    <Content Include="scripts\07.BinarySearch.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
