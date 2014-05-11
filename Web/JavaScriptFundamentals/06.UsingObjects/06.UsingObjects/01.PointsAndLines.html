@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Points and lines</title>
+    <link href="js-console.min.css" rel="stylesheet" />
+</head>
+<body>
+    <!--Write functions for working with shapes in  standard Planar coordinate system
+        Points are represented by coordinates P(X, Y)
+        Lines are represented by two points, marking their beginning and ending
+        L(P1(X1,Y1),P2(X2,Y2))
+        Calculate the distance between two points
+        Check if three segment lines can form a triangle-->
+    <div id="js-console">
+        <label for="number-input1">Input first segment start and end coordinates separated by spaces and press Enter: </label>
+        <input type="text" id="number-input1" onkeydown="onEnterKeyPressed(event)" />
+        <br />
+        <label for="number-input2">Input second segment start and end coordinates separated by spaces and press Enter: </label>
+        <input type="text" id="number-input2" onkeydown="onEnterKeyPressed(event)" />
+        <br />
+        <label for="number-input3">Input third segment start and end coordinates separated by spaces and press Enter: </label>
+        <input type="text" id="number-input3" onkeydown="onEnterKeyPressed(event)" />
+        <br />
+    </div>
+    <script src="scripts/js-console.js"></script>
+    <script src="scripts/01.PointsAndLines.js"></script>
+</body>
+</html>
