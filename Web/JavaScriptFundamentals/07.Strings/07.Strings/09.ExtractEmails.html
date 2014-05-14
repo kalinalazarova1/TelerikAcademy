@@ -13,27 +13,7 @@
         <input type="text" id="input1" onkeydown="onEnterKeyPressed(event)" />
         <br />
     </div>
-    <script src="js-console.js"></script>
-    <script>
-        window.onload = function () {
-            document.getElementById("input1").focus();
-        }
-
-        function extractEmailsTest() {
-            var text = jsConsole.read("input#input1");
-            //var text = "Please contact us by phone (+359 222 222 222) or by email at example@abv.bg or at baj.ivan@yahoo.co.uk. This is not email: test@test. This also: @telerik.com. Neither this: a@a.b.";
-            jsConsole.writeLine("The result is:");
-            jsConsole.writeLine(extractEmails(text).join('<br />'));
-        }
-
-        function extractEmails(text) {
-            return text.match(/\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b/gi);
-        };
-
-        function onEnterKeyPressed(event) {
-            if (event.keyCode == 13)
-                extractEmailsTest();
-        }
-    </script>
+    <script src="scripts/js-console.js"></script>
+    <script src="scripts/09.ExtractEmails.js"></script>
 </body>
 </html>

@@ -11,26 +11,7 @@
         <input type="text" id="input1" onkeydown="onEnterKeyPressed(event)" />
         <br />
     </div>
-    <script src="js-console.js"></script>
-    <script>
-        window.onload = function () {
-            document.getElementById("input1").focus();
-        }
-
-        function replaceSpacesTest() {
-            var text = jsConsole.read("input#input1");
-            jsConsole.writeLine("The result is written in the browser console");
-            console.log(replaceSpaces(text));
-        }
-
-        function replaceSpaces(text) {
-            return text.split(" ").join('&nbsp;');
-        };
-
-        function onEnterKeyPressed(event) {
-            if (event.keyCode == 13)
-                replaceSpacesTest();
-        }
-    </script>
+    <script src="scripts/js-console.js"></script>
+    <script src="scripts/05.ReplaceSpaces.js"></script>
 </body>
 </html>

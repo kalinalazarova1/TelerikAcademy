@@ -57,6 +57,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="JSLintNet.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -77,7 +78,19 @@
     <Content Include="10.ExtractPalindromes.html" />
     <Content Include="11.StringFormat.html" />
     <Content Include="12.CreateUnorderedList.html" />
-    <Content Include="js-console.js" />
+    <Content Include="scripts\01.ReverseString.js" />
+    <Content Include="scripts\02.BracketsChecker.js" />
+    <Content Include="scripts\03.SubstringCount.js" />
+    <Content Include="scripts\04.ChangeText.js" />
+    <Content Include="scripts\05.ReplaceSpaces.js" />
+    <Content Include="scripts\06.TextWithoutTags.js" />
+    <Content Include="scripts\07.ParseURLAddress.js" />
+    <Content Include="scripts\08.ReplaceURL.js" />
+    <Content Include="scripts\09.ExtractEmails.js" />
+    <Content Include="scripts\10.ExtractPalindromes.js" />
+    <Content Include="scripts\11.StringFormat.js" />
+    <Content Include="scripts\12.CreateUnorderedList.js" />
+    <Content Include="scripts\js-console.js" />
     <Content Include="js-console.min.css" />
     <Content Include="Web.config" />
   </ItemGroup>

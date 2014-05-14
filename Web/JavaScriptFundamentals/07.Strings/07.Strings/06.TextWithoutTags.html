@@ -12,27 +12,7 @@
         <input type="text" id="input1" onkeydown="onEnterKeyPressed(event)" />
         <br />
     </div>
-    <script src="js-console.js"></script>
-    <script>
-        window.onload = function () {
-            document.getElementById("input1").focus();
-        }
-
-        function removeTagsTest() {
-            var text = jsConsole.read("input#input1");
-            //var text = "<html><head><title>News </title></head><body><p><a href=&quot;http://academy.telerik.com&quot;>Telerik Academy</a> aims to provide free real-world practical training for young people who want to turn into skillful .NET software engineers.</p></body></html>";
-            jsConsole.writeLine("The result is: " + removeTags(text));
-        }
-
-        function removeTags(text) {
-            return text.replace(/<[^>]+>/ig, "");
-        };
-
-        function onEnterKeyPressed(event) {
-            if (event.keyCode == 13)
-                removeTagsTest();
-        }
-    </script>
+    <script src="scripts/js-console.js"></script>
+    <script src="scripts/06.TextWithoutTags.js"></script>
 </body>
-
 </html>

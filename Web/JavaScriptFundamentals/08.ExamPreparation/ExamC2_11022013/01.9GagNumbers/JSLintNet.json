@@ -1,0 +1,13 @@
+﻿{
+  "ignore": [
+    "\\script.js",
+    "\\bignumber.js"
+  ],
+  "options": {
+    "predef": {
+      "console": false
+    },
+    "plusplus": true,
+    "sloppy": true
+  }
+}

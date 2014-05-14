@@ -1,0 +1,10 @@
+﻿{
+  "ignore": [],
+  "options": {
+    "predef": {},
+    "bitwise": true,
+    "devel": true,
+    "plusplus": true,
+    "sloppy": true
+  }
+}
