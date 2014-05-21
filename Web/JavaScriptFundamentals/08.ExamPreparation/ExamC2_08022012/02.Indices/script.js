@@ -23,11 +23,9 @@ function Solve(args) {
     if (repeatIndex > 0) {
         result[repeatIndex - 1] = '(';
         result[result.length - 1] = ')';
-    }
-    else if (repeatIndex < 0) {
+    } else if (repeatIndex < 0) {
         result[result.length - 1] = '';
-    }
-    else {
+    } else {
         result[result.length - 1] = ')';
     }
 

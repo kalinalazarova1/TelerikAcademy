@@ -1,9 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.21005.1
+VisualStudioVersion = 12.0.30501.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02.Indices", "02.Indices\02.Indices.csproj", "{15CA4A87-EC98-41BF-937A-1000559F9570}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04.Crosswords", "04.Crosswords\04.Crosswords.csproj", "{5DDAA55B-56BE-4C75-9E7C-4672F8CF716E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01.BasicBASIC", "01.BasicBASIC\01.BasicBASIC.csproj", "{57E35DF0-1861-4546-98BF-0A880492D582}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{15CA4A87-EC98-41BF-937A-1000559F9570}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{15CA4A87-EC98-41BF-937A-1000559F9570}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{15CA4A87-EC98-41BF-937A-1000559F9570}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5DDAA55B-56BE-4C75-9E7C-4672F8CF716E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5DDAA55B-56BE-4C75-9E7C-4672F8CF716E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5DDAA55B-56BE-4C75-9E7C-4672F8CF716E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5DDAA55B-56BE-4C75-9E7C-4672F8CF716E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{57E35DF0-1861-4546-98BF-0A880492D582}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{57E35DF0-1861-4546-98BF-0A880492D582}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{57E35DF0-1861-4546-98BF-0A880492D582}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{57E35DF0-1861-4546-98BF-0A880492D582}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
