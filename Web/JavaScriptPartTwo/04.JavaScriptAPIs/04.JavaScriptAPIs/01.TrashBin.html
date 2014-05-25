@@ -1,0 +1,196 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Trash Bin</title>
+    <meta charset="utf-8" />
+    <style>
+        #wrapper{
+            background-image: url(image/tiles.jpg);
+            background-repeat:repeat;
+            width: 1200px;
+            height: 600px;
+        }
+
+        #wrapper > p{
+            color: greenyellow;
+            font-family: Consolas;
+            font-size: 30px;
+            position: absolute;
+            left: 500px;
+            top: 200px;
+        }
+
+        div#timer {
+            color: greenyellow;
+            font-family: Consolas;
+            font-size: 30px;
+            position: absolute;
+            left: 990px;
+            top: 10px;
+        }
+
+        #score_board {
+            position: absolute;
+            font-family: Consolas;
+            font-size: 30px;
+            color: greenyellow;
+            left: 200px;
+            top: 100px;
+        }
+
+    </style>
+</head>
+<body>
+    <!--1. Write a client-side based web application that consists of a trash bucket and lots of trash items in the browser window.
+        Implement the following functionality:
+        Drag trash items
+        Open the bucket when a trash item is being dragged over it and close when the trash is dragged out of the bucket, or is dropped in the bucket
+        To throw a trash item into the bucket, i.e. make it disappear from the browser window
+        2. Using the exercise with the bucket implement functionality for high-score board
+        When the user cleans all the trash, he is asked for a nickname and his score is saved in the local storage
+        The score of the user is the time that took him to clean the trash
+        Implement a high-score board, that is visible on page load and shows the top 5 scores 
+        The 5 users that cleaned the trash fastest-->
+
+    <div id="wrapper"></div><div id="timer"></div>
+    <script>        
+        window.onload = restart;
+        function restart() {
+            document.body.removeEventListener('keydown', restart, false);
+            printScores();
+            document.body.addEventListener('keydown', function resume() { document.body.removeEventListener('keydown', resume, false); document.getElementById('wrapper').innerHTML = ''; startGame(); }, false);
+            function printScores() {
+                function orderScores() {
+                    arr = [];
+                    var scoresTable = JSON.parse(localStorage.getItem('trash_scores')) || [];
+                    for (var i = 0; i < scoresTable.length; i++) {
+                        arr[i] = scoresTable[i];
+                    }
+                    arr.sort(function (x, y) { return x.score - y.score; });
+                    return arr;
+                }
+                document.getElementById('wrapper').innerHTML = '';
+                document.getElementById('timer').innerHTML = '';
+                var scoreBoard = document.createElement('table'); 
+                scoreBoard.id = 'score_board';
+                scoreBoard.innerHTML = '<tbody><tr><td>SCORE BOARD:</tr></th>';
+                var scores = orderScores() || [];
+                for (var i = 0; i < (scores.length < 5 ? scores.length : 5) ; i++) {
+                    scoreBoard.innerHTML += '<tr><td>' + (i + 1) + '. ' + arr[i].name + '</td><td>' + parseInt(arr[i].score / 1000) + ' seconds</td></tr>';
+                }
+                scoreBoard.innerHTML += '<tr><td>Press a key to start the game.</td></tr></tbody>';
+                document.getElementById('wrapper').appendChild(scoreBoard);
+            }
+        }
+        function startGame() {
+            var TRASH_COUNT = 6;
+            var startTime = new Date();
+            var remainedTrash = TRASH_COUNT;
+            var time;
+            var seconds = 0;
+            function timer() {
+                seconds++;
+                document.getElementById("timer").innerHTML = '<p>Elapsed time: <br>' + seconds + ' seconds</p>';
+            }
+            startTimer = setInterval(timer, 1000);
+            var docFrag = document.createDocumentFragment();
+            var bin = document.createElement('img');
+            bin.id = 'bin';
+            bin.style.position = 'absolute';
+            bin.style.left = 0;
+            bin.style.top = '60px';
+            bin.src = 'closed.png';
+            bin.style.width = '300px';
+            docFrag.appendChild(bin);
+            for (var i = 0; i < TRASH_COUNT; i++) {
+                var trash = createRandomTrash();
+                trash.id = 'trash' + i;
+                docFrag.appendChild(trash);
+            }
+            var wrapper = document.getElementById('wrapper');
+            wrapper.appendChild(docFrag);
+            wrapper.addEventListener('drop', drop, false);
+            wrapper.addEventListener('dragover', allowDrop, false);
+            var bucket = document.getElementById('bin');
+            bucket.addEventListener('mouseleave', closeBin, false);
+
+            function createRandomTrash() {
+                var trash = document.createElement('img');
+                trash.src = 'image/trash.png';
+                trash.alt = 'trash';
+                trash.style.width = '40px';
+                trash.style.position = 'absolute';
+                var x = 0;
+                var y = 0;
+                while (x < 300 && y < 270) {
+                    x = ((Math.random() * 990) | 0) + 10;
+                    y = ((Math.random() * 400) | 0) + 10;
+                }
+                trash.style.left = x + 'px';
+                trash.style.top = y + 'px';
+                trash.draggable = 'true';
+                if (trash.addEventListener)
+                    trash.addEventListener('dragstart', drag, false);
+                else
+                    trash.attachEvent("ondragstart", drag);
+                return trash;
+            }
+
+            function drag(ev) {
+                ev.dataTransfer.setData('trash-id', ev.target.id);
+            }
+
+            function drop(ev) {
+                ev.preventDefault();
+                var draggedTrash = ev.dataTransfer.getData("trash-id");
+                if (ev.target == document.getElementById('bin')) {
+                    document.getElementById(draggedTrash).style.display = 'none';
+                    remainedTrash--;
+                    if (!remainedTrash) {
+                        time = new Date().getTime() - startTime.getTime();
+                        clearInterval(startTimer);
+                        document.getElementById('wrapper').innerHTML = '<p>GAME OVER<br>' + 'Your score is: ' + ((time / 1000) | 0) + ' seconds.<br>Press a key to restart...</p>';
+                        savePlayer();
+                        document.body.addEventListener('keydown', restart, false);
+                    }
+                }
+            }
+
+            function allowDrop(ev) {
+                document.getElementById('bin').src = 'image/open.png';
+                document.getElementById('bin').style.top = '8px';
+                ev.preventDefault();
+            }
+
+            function closeBin(ev) {
+                ev.target.src = 'image/closed.png';
+                ev.target.style.top = '60px';
+            }
+
+            function savePlayer() {
+                var playerName = prompt('Please enter your name: ', 'anonymous');
+                var scoresTable = localStorage.getItem('trash_scores');
+                if (!scoresTable) {
+                    scoresTable = [];
+                } else {
+                    scoresTable = JSON.parse(scoresTable);
+                }
+                scoresTable.push({ name: playerName, score: time });
+                if (scoresTable.length <= 5) {
+                    localStorage.setItem('trash_scores', JSON.stringify(scoresTable));
+                    return;
+                }
+                var worstKey = 0;
+                for (var i = 1; i < scoresTable.length; i++) {
+                    if (scoresTable[i].score > scoresTable[worstKey].score) {
+                        worstKey = i;
+                    }
+                }
+                scoresTable.splice(worstKey, 1);
+                localStorage.setItem('trash_scores', JSON.stringify(scoresTable));
+            }
+        }
+    </script>
+</body>
+
+</html>

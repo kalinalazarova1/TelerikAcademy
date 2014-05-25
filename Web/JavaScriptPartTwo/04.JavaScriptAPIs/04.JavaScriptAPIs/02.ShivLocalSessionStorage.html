@@ -1,0 +1,169 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Shiv Local and Session Storage</title>
+    <script src="scripts\cookies.js"></script>
+</head>
+<body>
+    <!--Create shiv/shim/polyfill to enable localStorage and sessionStorage in browsers that do not support them-->
+    <input type="text" name="tb-key" id="tb-key" value="" /> <br />
+    <textarea id="value-text"> </textarea><br />
+    <button onclick="onSaveButtonClick()">Save</button>
+    <button onclick="onRemoveButtonClick()">Remove</button>
+    <button onclick="onClearStorageButtonClick()">Clear storage</button><br />
+    My Local Storage:<div id="pairs-container">
+    </div>
+    My Session Storage:<div id="session-container">
+    </div>
+    <script>
+        var myLocalStorage = (function () {     //uses the demos for localStorage from the lecture to test myLocalStorage and mySessionStorage 
+		    function clear() {
+		        var all = document.cookie.split(';');
+		        for (var i = 0; i < all.length; i++) {
+		            if (all[i].split('=')[0]) cookies.remove('');
+		            cookies.remove(all[i].split('=')[0])
+		        }
+		        this.length = 0;
+		    }
+		    function setItem(itemKey, value, days) {
+		        if (!cookies.read(itemKey)) this.length++;
+		        cookies.create(itemKey, value, days);
+		    }
+            function key(index) {
+                var c = document.cookie.split(';')[index];
+                var cv = c.split('=');
+                return cv[0].trim();
+            }
+            function getItem(itemKey) { return cookies.read(itemKey).split('=')[1] }
+            function removeItem(itemKey) {
+                if (cookies.read(itemKey) !== undefined) {
+                    cookies.remove(itemKey);
+                    this.length--
+                }
+            }
+            return {
+                clear: clear,
+                getItem: getItem,
+                key: key,
+                length: (document.cookie.match(/\=/g) || []).length,
+                removeItem: removeItem,
+                setItem: setItem
+            }
+		})();
+
+		var mySessionStorage = (function () {
+		    var session = {};
+		    var len = 0;
+
+		    function setItem(itemKey, value) {
+		        if (!session[itemKey]) len++;
+		        session[itemKey] = value;
+		    }
+
+		    function getItem(itemKey) {
+		        return session[itemKey];
+		    }
+
+		    function removeItem(itemKey) {
+		        if (session[itemKey] !== undefined) {
+		            len--;
+		            delete session[itemKey]
+		        }    
+		    }
+
+		    function clear() {
+		        session = {};
+		        len = 0;
+		    }
+
+		    function key(index) {
+		        var count = -1;
+		        for (var p in session) {
+		            if(session.hasOwnProperty(p)) {
+		                count++;
+		                if (count == index) {
+		                    return p;
+		                }
+		            }
+		        }
+		    }
+
+		    function getLen() {
+		        return len;
+		    }
+
+		    return {
+		        setItem: setItem,
+		        getItem: getItem,
+		        removeItem: removeItem,
+		        clear: clear,
+		        key: key,
+		        length: getLen
+		    }
+		})();
+
+		    window.onload = function () {
+		        loadPairs();
+		        loadPairsSession();
+		    }
+
+		    function loadPairs() {
+		        if (!myLocalStorage.length || myLocalStorage.length == 0) {
+		            document.getElementById("pairs-container").innerHTML = "{ key:empty, value=empty}";
+		            return;
+		        }
+		        var resultHTML = "<ul>";
+		        for (var i = 0; i < myLocalStorage.length; i++) {
+		            var key = myLocalStorage.key(i);
+		            resultHTML +=
+                    '<li>' +
+                    '{<strong>key</strong>: "' + key + '", <br/><strong>value</strong>: "' + myLocalStorage.getItem(key) + '"}' +
+                    '</li>';
+		        }
+		        resultHTML += "</ul>";
+		        document.getElementById("pairs-container").innerHTML = resultHTML;
+		    }
+
+		    function loadPairsSession() {
+		        if (!mySessionStorage.length() || mySessionStorage.length() == 0) {
+		            document.getElementById("session-container").innerHTML = "{ key:empty, value=empty}";
+		            return;
+		        }
+		        var resultHTML = "<ul>";
+		        for (var i = 0; i < mySessionStorage.length(); i++) {
+		            var key = mySessionStorage.key(i);
+		            resultHTML +=
+                    '<li>' +
+                    '{<strong>key</strong>: "' + key + '", <br/><strong>value</strong>: "' + mySessionStorage.getItem(key) + '"}' +
+                    '</li>';
+		        }
+		        resultHTML += "</ul>";
+		        document.getElementById("session-container").innerHTML = resultHTML;
+		    }
+
+		    function onSaveButtonClick() {
+		        var key = document.getElementById("tb-key").value;
+		        var value = document.getElementById("value-text").value;
+		        myLocalStorage.setItem(key, value);
+		        mySessionStorage.setItem(key, value);
+		        loadPairs();
+		        loadPairsSession();
+		    }
+
+		    function onRemoveButtonClick() {
+		        var key = document.getElementById("tb-key").value;
+		        myLocalStorage.removeItem(key);
+		        mySessionStorage.removeItem(key);
+		        loadPairs();
+		        loadPairsSession();
+		    }
+
+		    function onClearStorageButtonClick() {
+		        myLocalStorage.clear();
+		        mySessionStorage.clear();
+		        loadPairs();
+		        loadPairsSession();
+		    }
+    </script>
+</body>
+</html>
