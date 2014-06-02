@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Divs directly inside divs.</title>
+    <style>
+        div{
+            padding: 5px;
+            margin: 5px;
+            border: 1px solid black;
+            width: 50%;
+            background-color: #ff6a00;
+        }
+        button{
+            width: 200px;
+            height: 50px;
+            float: left;
+            margin-left: 20px;
+        }
+    </style>
+    <script src="script.js"></script>
+</head>
+<body>
+    <div>
+        <div>Div directly in div.</div>
+        <div>Div directly in div.</div>
+        <ul><li><div>Div not directly in div.</div></li></ul>
+    </div>
+    <button onclick="selectByTagName()">Make divs directly in divs green by getElementByTagName</button>
+    <button onclick="selectByQuerySelector()">Make divs directly in divs green by querySelector</button>
+    <button onclick="undoStyle()">Undo style</button>
+</body>
+</html>

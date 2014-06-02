@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30501.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02.BouncingBall", "02.BouncingBall\02.BouncingBall.csproj", "{AD066800-43B0-4FFA-86C9-55D1F9077E4B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03.Snake", "03.Snake\03.Snake.csproj", "{834600B1-854E-4DC0-A4F1-F11F8EFD1FA8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01.CanvasDrawings", "01.CanvasDrawings\01.CanvasDrawings.csproj", "{C21B5FE8-31C9-48F3-85D2-32AF42D05492}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AD066800-43B0-4FFA-86C9-55D1F9077E4B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD066800-43B0-4FFA-86C9-55D1F9077E4B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD066800-43B0-4FFA-86C9-55D1F9077E4B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD066800-43B0-4FFA-86C9-55D1F9077E4B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{834600B1-854E-4DC0-A4F1-F11F8EFD1FA8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{834600B1-854E-4DC0-A4F1-F11F8EFD1FA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{834600B1-854E-4DC0-A4F1-F11F8EFD1FA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{834600B1-854E-4DC0-A4F1-F11F8EFD1FA8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C21B5FE8-31C9-48F3-85D2-32AF42D05492}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C21B5FE8-31C9-48F3-85D2-32AF42D05492}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C21B5FE8-31C9-48F3-85D2-32AF42D05492}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C21B5FE8-31C9-48F3-85D2-32AF42D05492}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

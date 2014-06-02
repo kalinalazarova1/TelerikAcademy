@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Query Selector</title>
+    <script src="sizzle.min.js"></script>
+    <style>
+        p{
+            margin-left: 20px;
+        }
+        .foo {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            left: 50px;
+            top: 50px;
+            background-color: greenyellow;
+            border-radius: 5px;
+            padding: 5px;
+        }
+
+        #wrapper {
+            width: 500px;
+            height: 200px;
+        }
+    </style>
+    <script src="sizzle.min.js"></script>
+</head>
+<body>
+    <!--Write a script that shims querySelector and querySelectorAll in older browsers-->
+    <div id="wrapper">
+        <p>We have empty divs which are filled with text using querySelector:</p>
+        <div class="foo"></div>
+        <div class="foo"></div>
+        <div class="foo"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
