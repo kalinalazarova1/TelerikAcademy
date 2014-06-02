@@ -1,0 +1,12 @@
+﻿{
+  "ignore": [],
+  "options": {
+    "predef": {
+      "onload": false,
+      "Kinetic": false
+    },
+    "browser": true,
+    "devel": true,
+    "plusplus": true
+  }
+}
