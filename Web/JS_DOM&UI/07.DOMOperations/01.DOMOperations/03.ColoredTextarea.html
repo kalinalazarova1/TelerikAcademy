@@ -1,0 +1,16 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Colored Textarea</title>           
+</head>
+<body>
+    <!--Create a text area and two inputs with type="color"
+        Make the font color of the text area as the value of the first color input
+        Make the background color of the text area as the value of the second input-->
+    <label for="font">Please input a color for the font:</label><br />
+    <input type="color" id="font" value="#000" onchange="changeFontColor(createTextarea())" /><br />
+    <label for="background">Please input a color for the background:</label><br />
+    <input type="color" id="background" value="#000" onchange="changeBackground(createTextarea())" /><br />
+    <script src="scripts/coloredTextArea.js"></script>
+</body>
+</html>
