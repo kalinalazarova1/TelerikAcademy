@@ -1,0 +1,13 @@
+﻿{
+  "ignore": [
+    "\\kinetic.min.js"
+  ],
+  "options": {
+    "predef": {
+      "Kinetic": false
+    },
+    "browser": true,
+    "plusplus": true,
+    "sloppy": true
+  }
+}
