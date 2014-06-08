@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Logos</title>
+    <script src="raphael-min.js"></script>
+</head>
+<body>
+    <script>
+        var paper = Raphael(10, 10, 900, 500);
+        var first = paper.text(150, 30, 'Telerik');
+        first.attr({
+            'font-family': 'Calibri',
+            'font-size': '48',
+            'font-weight': 'bold'
+        })
+        var firstEnd = paper.text(223, 30, '®');
+        firstEnd.attr({
+            'font-family': 'Calibri',
+            'font-size': '24'
+        })
+        var second = paper.text(175, 62, 'Develop experiences');
+        second.attr({
+            'font-family': 'Calibri',
+            'font-size': '20',
+        })
+        var logo = paper.path('M75 23 l-10 -10 -20 20 10 10 10 -10 -20 -20 -10 10');
+        logo.attr({
+            'stroke': '#62E800',
+            'stroke-width': '5'
+        })
+        var you = paper.text(145, 150, 'You');
+        you.attr({
+            'font-family': 'Impact',
+            'font-size': '55'
+        })
+        var rect = paper.rect(190, 115, 120, 70, 25);
+        rect.attr({
+            'fill': 'red',
+            'stroke': 'none'
+        });
+        var tube = paper.text(250, 150, 'Tube');
+        tube.attr({
+            'font-family': 'Impact',
+            'font-size': '55',
+            'fill': '#fff'
+        })
+    </script>
+</body>
+</html>

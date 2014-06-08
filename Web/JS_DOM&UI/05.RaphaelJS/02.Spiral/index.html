@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Sprial</title>
+    <script src="raphael.js"></script>
+</head>
+<body>
+    <script>
+        var x,
+            y,
+            r = 0,
+            angle,
+            pathString = 'M 500 270 L';
+
+        for (var angle = 0; angle < Math.PI * 9; angle += 0.01) {
+            var y = Math.floor(270 + (r * Math.cos(angle)));
+            var x = Math.floor(500 + (r * Math.sin(angle)));
+            r += 0.08;
+            pathString += ' ' + x + ' ' + y;
+        }
+
+        var paper = Raphael(10, 10, 1200, 500);
+        paper.path(pathString);
+    </script>
+</body>
+</html>
