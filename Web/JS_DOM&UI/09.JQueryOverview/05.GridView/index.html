@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Grid View</title>
+    <script src="jquery-2.1.1.min.js"></script>
+    <style>
+        table {
+            border-collapse: collapse;
+            border: 1px solid black;
+            width: 400px;
+        }
+
+        th {
+            background-color: lightgray;
+        }
+
+        td table{
+            margin: -5px;
+        }
+
+        td, th {
+            border: 1px solid black;
+            padding: 5px;
+        }
+    </style>
+
+</head>
+<body>
+    <div id="grid-view-container"></div>
+    <script src="script.js"></script>
+    <script>
+        grid.create()
+            .addRow('1', 'QPC', 'Nikolay Kostov')
+            .addHeader('Number', 'Course', 'Teacher')
+            .addRow('2', 'JS DOM & UI', 'Doncho Minkov')
+            .addNestedGrid(
+                grid.create()
+                    .addHeader('Lecture', 'Homework')
+                    .addRow('Introduction to JS DOM & UI', 'No')
+                    .addRow('DOM Manipulation', 'Yes'),
+                    3)
+            .addRow('3', 'JS Fundamentals', 'Ivaylo Kenov')
+            .render('#grid-view-container')
+    </script>
+</body>
+</html>

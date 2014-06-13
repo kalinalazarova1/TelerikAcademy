@@ -1,0 +1,12 @@
+﻿{
+  "ignore": [],
+  "options": {
+    "predef": {
+      "$": false,
+      "jQuery": false
+    },
+    "browser": true,
+    "plusplus": true,
+    "sloppy": true
+  }
+}

@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30501.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01.Slider", "01.Slider\01.Slider.csproj", "{CA90F6D4-F377-4246-A756-BDE2BFC159BE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02.InsertElement", "02.InsertElement\02.InsertElement.csproj", "{568EF54E-093A-451B-8A20-2A8CDD2F0054}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04.ChangeColorBackground", "04.ChangeColorBackground\04.ChangeColorBackground.csproj", "{BC2EBA58-9D97-4E67-9B74-2029F4C7EAC9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03.GenerateTable", "03.GenerateTable\03.GenerateTable.csproj", "{2AC2635F-DE57-410A-9365-AA9E6B4A45F5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05.GridView", "05.GridView\05.GridView.csproj", "{A4425F56-8F0D-4B8E-8A67-7481FB6AAFE1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CA90F6D4-F377-4246-A756-BDE2BFC159BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA90F6D4-F377-4246-A756-BDE2BFC159BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA90F6D4-F377-4246-A756-BDE2BFC159BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA90F6D4-F377-4246-A756-BDE2BFC159BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{568EF54E-093A-451B-8A20-2A8CDD2F0054}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{568EF54E-093A-451B-8A20-2A8CDD2F0054}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{568EF54E-093A-451B-8A20-2A8CDD2F0054}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{568EF54E-093A-451B-8A20-2A8CDD2F0054}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC2EBA58-9D97-4E67-9B74-2029F4C7EAC9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC2EBA58-9D97-4E67-9B74-2029F4C7EAC9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC2EBA58-9D97-4E67-9B74-2029F4C7EAC9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC2EBA58-9D97-4E67-9B74-2029F4C7EAC9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2AC2635F-DE57-410A-9365-AA9E6B4A45F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2AC2635F-DE57-410A-9365-AA9E6B4A45F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2AC2635F-DE57-410A-9365-AA9E6B4A45F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2AC2635F-DE57-410A-9365-AA9E6B4A45F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A4425F56-8F0D-4B8E-8A67-7481FB6AAFE1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A4425F56-8F0D-4B8E-8A67-7481FB6AAFE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A4425F56-8F0D-4B8E-8A67-7481FB6AAFE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A4425F56-8F0D-4B8E-8A67-7481FB6AAFE1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
