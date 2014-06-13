@@ -1,0 +1,16 @@
+﻿{
+  "ignore": [
+    "\\jquery-1.11.1.js"
+  ],
+  "options": {
+    "predef": {
+      "$": false,
+      "jQuery": false
+    },
+    "bitwise": true,
+    "browser": true,
+    "devel": true,
+    "plusplus": true,
+    "sloppy": true
+  }
+}

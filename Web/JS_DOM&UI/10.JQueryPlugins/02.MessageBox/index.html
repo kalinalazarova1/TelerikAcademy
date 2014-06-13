@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Message Box</title>
+    <script src="jquery-1.11.1.js"></script>
+    <style>
+        #message-box{
+            width: 180px;
+            height: 50px;
+            border: 2px double black;
+            background-color: lightgray;
+            margin: auto;
+            padding: 50px;
+            font-size: 20px;
+            font-family: Consolas;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <button id="success">Success</button>
+    <button id="error">Error</button>
+    <div id="message-box"></div>
+    <script src="script.js"></script>
+    <script>
+        var msgBox = $('#message-box').messageBox();
+        $('#success').click(function () { msgBox.success('Success message'); });
+        $('#error').click(function () { msgBox.error('Error message'); });
+    </script>
+</body>
+</html>
