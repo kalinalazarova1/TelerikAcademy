@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Dynamic Select</title>
+    <script src="jquery-1.11.1.js"></script>
+    <script src="handlebars-v1.3.0.js"></script>
+</head>
+<body>
+    <script id="select-template" type="text/x-handlebars-template">
+        <select>
+            {{#items}}
+            <option data-value="{{value}}">{{text}}</option>
+            {{/items}}
+        </select>
+    </script>
+    <script>
+        var items = [{
+            value: 1,
+            text: 'One'
+        }, {
+            value: 2,
+            text: 'Two'
+        }, {
+            value: 3,
+            text: 'Three'
+        }, {
+            value: 4,
+            text: 'Four'
+        }, {
+            value: 5,
+            text: 'Five'
+        }, {
+            value: 6,
+            text: 'Six'
+        }];
+
+        var selectTemplate = Handlebars.compile($('#select-template').html());
+        $('body').html(selectTemplate({items: items}));
+    </script>
+</body>
+</html>
