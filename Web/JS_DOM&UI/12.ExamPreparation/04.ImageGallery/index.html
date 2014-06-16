@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Image Gallery</title>
+    <style>
+        div{
+            padding: 5px;
+            margin: 5px;
+            display: inline-block;
+        }
+
+        .album-frame, .frame {
+            border: 1px solid black;
+        }
+
+        h1{
+            text-align: center;
+            margin: auto 0;
+        }
+
+        img{
+            width: 80px;
+            height: 80px;
+        }
+    </style>
+</head>
+<body>
+    <script src="script.js"></script>
+    <script>
+        /// <reference path="script.js" />
+        // task 1
+        var gallery = controls.getImageGallery("#image-gallery-holder");
+        gallery.addImage("JS Ninja", "images/js-ninja.jpg");
+        gallery.addImage("JS Ninja", "images/js-ninja.jpg");
+        gallery.addImage("JS Ninja", "images/js-ninja.jpg");
+        var ninjasAlbum = gallery.addAlbum("Ninjas");
+        ninjasAlbum.addImage("JS Ninja 2", "images/js-ninja.jpg");
+        ninjasAlbum.addImage("JS Ninja 2", "images/js-ninja.jpg");
+        ninjasAlbum.addImage("JS Ninja 2", "images/js-ninja.jpg");
+        // task 2
+        var kidsAlbum = ninjasAlbum.addAlbum("Kids Ninjas");
+        kidsAlbum.addImage("Kid Ninja", "images/js-ninja.jpg");
+        kidsAlbum.addImage("Kid Ninja", "images/js-ninja.jpg");
+
+    </script>
+</body>
+</html>
