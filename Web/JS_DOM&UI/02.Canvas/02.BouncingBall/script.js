@@ -14,7 +14,7 @@ window.onload = function () {
         posY = Math.random() * (maxY - minY) + minY;
 
     function moveBall() {
-        var speed = 10;              //speed in pixels for 0.1 second 
+        var speed = 1;              //speed in pixels for 0.1 second 
         ctx.beginPath();
         ctx.clearRect(posX - 10, posY - 10, 20, 20);
         switch (direction) {
@@ -60,7 +60,7 @@ window.onload = function () {
         ctx.stroke();
         ctx.fill();
         ctx.closePath();
-        setTimeout(function () { moveBall(); }, 100);
+        setTimeout(function () { moveBall(); }, 10);
     }
 
     ctx.strokeStyle = '#000';
