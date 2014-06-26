@@ -1,0 +1,85 @@
+﻿ <!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Dom Module</title>
+    <script src="scripts/domModule.js"></script>
+    <style>
+        div {
+            height: 50%;
+            background: gray;
+            font-family: Consolas;
+            border: 2px solid red;
+            padding: 10px; 
+        }
+        a, button {
+            text-decoration: none;
+            display: block;
+            float: left;
+            background-color: lightgray;
+            font-size: 18px;
+            text-align: center;
+            margin: 5px;
+            width: 200px;
+            height: 30px;
+            color: darkgreen;
+        }
+        ul {
+            list-style: none;
+        }
+		#main-nav{
+			height: 50px;
+		}
+    </style>
+</head>
+<body>
+    <!--Create a module for working with DOM. The module should have the following functionality
+        Add DOM element to parent element given by selector
+        Remove element from the DOM  by given selector
+        Attach event to given selector by given event type and event hander
+        Add elements to buffer, which appends them to the DOM when their count for some selector becomes 100
+        The buffer contains elements for each selector it gets
+        Get elements by CSS selector
+        The module should reveal only the methods-->
+    <button>Execute tasks</button>
+        <div id="main-nav">
+            <ul>
+                <li><a href="#" class="button">First button</a></li>
+                <li><a href="#" class="button">Second button</a></li>
+                <li><a href="#" class="button">Third button</a></li>
+                <li><a href="#" class="button">Fourth button</a></li>
+                <li><a href="#" class="button">Fifth button</a></li>
+            </ul>
+        </div>
+    <div id="wrapper">
+    </div>   
+    <script>
+        var button = document.getElementsByTagName('button')[0];
+        button.addEventListener('click', function onClick() {
+            'use strict'
+            var div = document.createElement("div"),
+                i;
+            this.removeEventListener('click', onClick);
+            div.className = "container";
+            div.innerHTML = "added div";
+            //appends div to #wrapper
+            domModule.addElement("#wrapper", div);
+            //removes li:first-child from ul
+            domModule.removeElement("ul", "li:first-child");
+            //trying to remove an non-existing element do not result in exception but nothing is done
+            domModule.removeElement("ul", "p");
+            //adds event handler to each anchor element with class button
+            domModule.addEventHandler("a.button", 'click', function () { alert("Clicked") });
+            for (i = 0; i < 150; i++) {
+                var divItem = div.cloneNode(true);
+                divItem.innerHTML = "appended div number:" + (i + 1);
+                domModule.addToBuffer(".container", divItem);
+            }
+            //logs in the console all anchor elements that have class button
+            var allButtons = domModule.getElements('a.button');
+            for (i = 0; i < allButtons.length; i++) {
+                console.log(allButtons[i].innerHTML);
+            }
+        });
+    </script>
+</body>
+</html>
