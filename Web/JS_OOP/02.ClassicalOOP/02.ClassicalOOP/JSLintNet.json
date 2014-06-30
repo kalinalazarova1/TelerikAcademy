@@ -2,6 +2,7 @@
   "ignore": [],
   "options": {
     "predef": {},
-    "browser": true
+    "browser": true,
+    "sloppy": true
   }
 }

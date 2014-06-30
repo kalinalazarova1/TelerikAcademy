@@ -12,13 +12,18 @@
             width: 800,
             line: 2
         });
-        canvas.drawLine(100, 100, 200, 100);
+        var myLine = new shapes.Line(100, 100, 200, 100);
+        canvas.drawLine(myLine);
         canvas.fill = 'lightgreen';
         canvas.stroke = 'green';
-        canvas.drawCircle(100, 200, 50);
+        var myCircle = new shapes.Circle(100, 200, 50);
+        canvas.drawCircle(myCircle);
         canvas.fill = 'lightblue';
         canvas.stroke = 'blue';
-        canvas.drawRect(400, 100, 200, 100);
+        var myRect = new shapes.Rect(400, 100, 200, 100);
+        canvas.drawRect(myRect);
+        var invalidRect = shapes.Rect(400, 300, 200, 100);      // invalid constructor call without a new but anyway we get valid object
+        canvas.drawRect(invalidRect);
     </script>
 </body>
 </html>
