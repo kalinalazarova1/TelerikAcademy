@@ -24,32 +24,32 @@ var CanvasDrawer = (function () {
     }
 
     CanvasDrawer.prototype.drawLine = function (line) {
-        ctx.beginPath();
-        ctx.moveTo(line.startX, line.startY);
-        ctx.lineTo(line.endX, line.endY);
-        ctx.closePath();
-        ctx.lineWidth = this.line;
-        ctx.strokeStyle = this.stroke;
-        ctx.stroke();
+        this.ctx.beginPath();
+        this.ctx.moveTo(line.startX, line.startY);
+        this.ctx.lineTo(line.endX, line.endY);
+        this.ctx.closePath();
+        this.ctx.lineWidth = this.line;
+        this.ctx.strokeStyle = this.stroke;
+        this.ctx.stroke();
     };
 
     CanvasDrawer.prototype.drawCircle = function (circle) {
-        ctx.beginPath();
-        ctx.fillStyle = this.fill;
-        ctx.strokeStyle = this.stroke;
-        ctx.lineWidth = this.line;
-        ctx.arc(circle.x, circle.y, circle.radius, 0, 2 * Math.PI);
-        ctx.closePath();
-        ctx.fill();
-        ctx.stroke();
+        this.ctx.beginPath();
+        this.ctx.fillStyle = this.fill;
+        this.ctx.strokeStyle = this.stroke;
+        this.ctx.lineWidth = this.line;
+        this.ctx.arc(circle.x, circle.y, circle.radius, 0, 2 * Math.PI);
+        this.ctx.closePath();
+        this.ctx.fill();
+        this.ctx.stroke();
     };
 
     CanvasDrawer.prototype.drawRect = function (rect) {
-        ctx.fillStyle = this.fill;
-        ctx.lineWidth = this.line;
-        ctx.strokeStyle = this.stroke;
-        ctx.fillRect(rect.x, rect.y, rect.width, rect.height);
-        ctx.strokeRect(rect.x, rect.y, rect.width, rect.height);
+        this.ctx.fillStyle = this.fill;
+        this.ctx.lineWidth = this.line;
+        this.ctx.strokeStyle = this.stroke;
+        this.ctx.fillRect(rect.x, rect.y, rect.width, rect.height);
+        this.ctx.strokeRect(rect.x, rect.y, rect.width, rect.height);
     };
 
     return CanvasDrawer;
