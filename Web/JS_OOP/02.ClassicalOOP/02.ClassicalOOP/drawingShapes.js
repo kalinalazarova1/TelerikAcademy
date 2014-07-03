@@ -4,7 +4,6 @@
 // Line, by given from (X1, Y1) and to (X2, Y2) positions
 
 var CanvasDrawer = (function () {
-    var ctx;
     function CanvasDrawer(selector, args) {
         if (!(this instanceof arguments.callee)) {
             return new CanvasDrawer(selector, args);
@@ -21,7 +20,7 @@ var CanvasDrawer = (function () {
         canvas.setAttribute('width', args.width || 1000);
         canvas.setAttribute('height', args.height || 500);
         container.appendChild(canvas);
-        ctx = canvas.getContext('2d');
+        this.ctx = canvas.getContext('2d');
     }
 
     CanvasDrawer.prototype.drawLine = function (line) {
