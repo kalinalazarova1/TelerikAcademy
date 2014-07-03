@@ -1,0 +1,93 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Firm Hierarchy</title>
+    <script src="scripts/interfaces/personnel.js"></script>
+    <script src="scripts/interfaces/employee.js"></script>
+    <script src="scripts/interfaces/manager.js"></script>
+    <script src="scripts/personnel/basePersonnel.js"></script>
+    <script src="scripts/personnel/firmEmployee.js"></script>
+    <script src="scripts/personnel/firmManager.js"></script>
+    <script src="scripts/tree/node.js"></script>
+    <script src="scripts/tree/tree.js"></script>
+    <script src="scripts/firm/firm.js"></script>
+</head>
+<body>
+    <script>
+        // 1.*Create a class hierarchy by your choice with TypeScript consisting of the following:
+        // At least 2 modules
+        // At least 3 interfaces
+        // At least 6 classes
+        // At least 2 uses of inheritance
+        // At least 12 methods
+        // At least one generic use
+        // At least one static use
+        // Everything should be strongly typed
+
+        // Open the browser console to view the result
+        var theBoss = new Tree.Node(new Personnel.FirmManager('Ivan', 'Petrov', 'Grand Manager', Infinity));
+        
+        var firstExecutive = new Tree.Node(new Personnel.FirmManager('Aleksandar', 'Sivov', 'Executive director', 100000));
+        var secondExecutive = new Tree.Node(new Personnel.FirmManager('Stefan', 'Tamatov', 'Executive director', 100000));
+
+        var departmentManagerSales = new Tree.Node(new Personnel.FirmManager('Zari', 'Zarev', 'Sales director', 10000));
+        var departmentManagerProduction = new Tree.Node(new Personnel.FirmManager('Silvia', 'Peneva', 'Production director', 10000));
+        var departmentManagerAdministration = new Tree.Node(new Personnel.FirmManager('Rumen', 'Savov', 'Administration director', 10000));
+
+        var cleaner = new Tree.Node(new Personnel.FirmEmployee('Hristo', 'Iliev', 'Cleaner', false));
+        var accountant = new Tree.Node(new Personnel.FirmEmployee('Pepa', 'Golemanova', 'Accountant', true));
+        var cashier = new Tree.Node(new Personnel.FirmEmployee('Philip', 'Smilov', 'Cashier', false));
+        var salesman1 = new Tree.Node(new Personnel.FirmEmployee('Boris', 'Bobev', 'Salesman', true));
+        var salesman2 = new Tree.Node(new Personnel.FirmEmployee('Georgi', 'Popov', 'Salesman', true));
+        var salesman3 = new Tree.Node(new Personnel.FirmEmployee('Ivaylo', 'Todorova', 'Salesman', true));
+        var salesman4 = new Tree.Node(new Personnel.FirmEmployee('Mimi', 'Shishkova', 'Salesman', true));
+        var worker1 = new Tree.Node(new Personnel.FirmEmployee('Rosen', 'Rusev', 'Worker', false));
+        var worker2 = new Tree.Node(new Personnel.FirmEmployee('Kamen', 'Kolev', 'Senior worker', true));
+        var worker3 = new Tree.Node(new Personnel.FirmEmployee('Anelia', 'Zareva', 'Worker', false));
+
+        theBoss.addChild(firstExecutive);
+        theBoss.addChild(secondExecutive);
+        theBoss.parent = null;
+
+        firstExecutive.addChild(departmentManagerSales);
+        firstExecutive.parent = theBoss;
+        secondExecutive.addChild(departmentManagerAdministration);
+        secondExecutive.addChild(departmentManagerProduction);
+        secondExecutive.parent = theBoss;
+
+        departmentManagerSales.addChild(salesman1);
+        salesman1.parent = departmentManagerSales;
+        departmentManagerSales.addChild(salesman2);
+        salesman2.parent = departmentManagerSales;
+        departmentManagerSales.addChild(salesman3);
+        salesman3.parent = departmentManagerSales;
+        departmentManagerSales.addChild(salesman4);
+        salesman4.parent = departmentManagerSales;
+        departmentManagerSales.parent = firstExecutive;
+
+        departmentManagerProduction.addChild(worker1);
+        worker1.parent = departmentManagerProduction;
+        departmentManagerProduction.addChild(worker2);
+        worker2.parent = departmentManagerProduction;
+        departmentManagerProduction.addChild(worker3);
+        worker3.parent = departmentManagerProduction;
+        departmentManagerProduction.parent = secondExecutive;
+
+        departmentManagerAdministration.addChild(cashier);
+        cashier.parent = departmentManagerAdministration;
+        departmentManagerAdministration.addChild(accountant);
+        accountant.parent = departmentManagerAdministration;
+        departmentManagerAdministration.addChild(cleaner);
+        cleaner.parent = departmentManagerAdministration;
+        departmentManagerAdministration.parent = secondExecutive;
+
+        var theFirm = new Firm.Firm('Global Sales Ltd', new Tree.Tree(theBoss));
+
+        console.log(theFirm.toString());
+        //theFirm.makePurchase(cleaner, 2000); // if uncommented this line throws an exception
+        theFirm.makePurchase(salesman1, 50000);
+        theFirm.makePurchase(salesman2, 5000000);
+        theFirm.makePurchase(accountant, 200);
+    </script>
+</body>
+</html>
