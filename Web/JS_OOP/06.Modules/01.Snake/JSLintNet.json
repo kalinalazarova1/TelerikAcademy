@@ -1,0 +1,10 @@
+﻿{
+  "ignore": [],
+  "options": {
+    "predef": {},
+    "browser": true,
+    "nomen": true,
+    "plusplus": true,
+    "sloppy": true
+  }
+}
