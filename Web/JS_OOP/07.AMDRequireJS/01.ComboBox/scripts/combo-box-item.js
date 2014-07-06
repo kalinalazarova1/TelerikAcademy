@@ -13,7 +13,7 @@ define(['libs/jquery', 'libs/handlebars'], function () {
             var $item = $('<div>')
                 .addClass('combo-box-item')
                 .html(compiledTemplate(this._content));
-            return $item.html();
+            return $('<div>').append($item).html();
         };
 
         return {
