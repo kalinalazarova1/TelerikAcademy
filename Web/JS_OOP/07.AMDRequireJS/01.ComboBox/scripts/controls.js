@@ -11,8 +11,9 @@ define(['combo-box-item', 'libs/jquery'], function (ComboBoxItem) {
 
         ComboBox.prototype.render = function (htmlTemplate) {
             var self = this;
+            var unique = new Date().getTime();
             var $combo = $('<div>')
-            $('body').on('click', '#combo-box .person-item', function () {
+            $('body').on('click', '#combo' + unique + ' .person-item', function () {
             var $this = $(this);
                 if (!self._collapsed) {
                     self._collapsed = true;
@@ -28,7 +29,8 @@ define(['combo-box-item', 'libs/jquery'], function (ComboBoxItem) {
                 $combo.html($combo.html() + ComboBoxItem(this._items[i]).render(htmlTemplate));
                 $combo.find('.person-item').hide().first().show();
             }
-            var $list = $('<div>').append($('<div id="combo-box">').append($combo));
+            
+            var $list = $('<div>').append($('<div id="combo'+ unique +'">').append($combo));
 
             return $list.html();
         };
