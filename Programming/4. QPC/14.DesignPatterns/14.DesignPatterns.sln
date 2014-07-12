@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30501.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01.Sigleton", "01.Sigleton\01.Sigleton.csproj", "{C5A4678C-F8C2-4AA2-BDFB-F5A820418CCA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02.Observer", "02.Observer\02.Observer.csproj", "{B2102391-BBD7-4002-AF22-768E99D9458E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03.Memento", "03.Memento\03.Memento.csproj", "{ACA258CF-20C0-4376-A2B4-07D689F68D19}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C5A4678C-F8C2-4AA2-BDFB-F5A820418CCA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5A4678C-F8C2-4AA2-BDFB-F5A820418CCA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5A4678C-F8C2-4AA2-BDFB-F5A820418CCA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5A4678C-F8C2-4AA2-BDFB-F5A820418CCA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B2102391-BBD7-4002-AF22-768E99D9458E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2102391-BBD7-4002-AF22-768E99D9458E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2102391-BBD7-4002-AF22-768E99D9458E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2102391-BBD7-4002-AF22-768E99D9458E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ACA258CF-20C0-4376-A2B4-07D689F68D19}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ACA258CF-20C0-4376-A2B4-07D689F68D19}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ACA258CF-20C0-4376-A2B4-07D689F68D19}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ACA258CF-20C0-4376-A2B4-07D689F68D19}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
