@@ -1,0 +1,16 @@
+﻿{
+  "ignore": [
+    "\\app\\scripts\\libs\\jquery.js",
+    "\\app\\scripts\\libs\\require.js"
+  ],
+  "options": {
+    "predef": {
+      "define": false,
+      "require": false,
+      "$": false
+    },
+    "browser": true,
+    "devel": true,
+    "plusplus": true
+  }
+}

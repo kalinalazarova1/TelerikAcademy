@@ -1,0 +1,103 @@
+﻿body {
+    font-family: 'Comic Sans MS';
+    background-image:  url('app/images/ram.png'), url('app/images/sheep.png'), url('app/images/background.png');
+    background-position-x: 550px, 700px, 0;
+    background-position-y: 120px, 120px, 0;
+    background-repeat: no-repeat;
+    background-size: 100px, 100px, 1370px;
+    color: #333;
+    font-size: 20px;
+}
+
+#left{
+    top: 250px;
+    left: 350px;
+    position: absolute;
+    width: 400px;
+    height: 200px;
+    background-color: white;
+    opacity: 0.8;
+    border-radius: 35px;
+    border: 2px solid gray;
+    padding: 30px;
+    text-align: center;
+}
+
+#right{
+    top: 50px;
+    left: 1025px;
+    position: absolute;
+    width: 300px;
+    font-weight: bold;
+}
+
+#right .current{
+    top: 50px;
+    left: 1025px;
+    position: relative;
+    width: 300px;
+    height: 30px;
+    background-color: white;
+    opacity: 0.8;
+    border: 2px solid gray;
+    border-radius: 5px;
+}
+
+h1{
+    color: darkorange;
+    font-size: 56px;
+    text-align: center;
+}
+
+#left span{
+    font-size: 16px;
+}
+
+button{
+    width: 150px;
+    height: 40px;
+    margin: 15px;
+    font-family: 'Comic Sans MS';
+    font-size: 20px;
+    color: red;
+    border: 2px solid gray;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+input{
+    width: 120px;
+    height: 30px;
+    margin-right: 5px;
+    font-size: 25px;
+    text-align: center;
+    cursor: pointer;
+}
+
+table{
+    position: absolute;
+    top: 200px;
+    left: 500px;
+    font-weight: bold;
+}
+
+.end{
+    font-size: 25px;
+    color: red;
+    text-align: center;
+    font-weight: bold;
+}
+
+.resultImages{
+    display: inline-block;
+    width: 120px;
+}
+
+.resultNumber{
+    display: inline-block;
+    width: 70px;
+}
+
+h4{
+    color: darkorange;
+}
