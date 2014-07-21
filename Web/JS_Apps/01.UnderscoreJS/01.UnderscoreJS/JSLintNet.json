@@ -1,0 +1,15 @@
+﻿{
+  "ignore": [
+    "\\scripts\\libs\\require.js",
+    "\\scripts\\libs\\underscore.js"
+  ],
+  "options": {
+    "predef": {
+      "require": false,
+      "define": false,
+      "_": false
+    },
+    "devel": true,
+    "nomen": true
+  }
+}
