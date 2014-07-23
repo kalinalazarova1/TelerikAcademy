@@ -20,7 +20,7 @@
             }
             worstKey = 0;
             for (i = 1; i < scoresTable.length; i++) {
-                if (scoresTable[i].score < scoresTable[worstKey].score) {
+                if (scoresTable[i].score > scoresTable[worstKey].score) {
                     worstKey = i;
                 }
             }

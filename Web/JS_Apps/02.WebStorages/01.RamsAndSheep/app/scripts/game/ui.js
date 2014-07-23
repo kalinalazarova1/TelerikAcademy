@@ -33,7 +33,13 @@ define(['scripts/libs/jquery'], function () {
         }
 
         function getPlayerName() {
-            return prompt('Please enter your name: ', 'anonymous');
+            return toSaveString(prompt('Please enter your name: ', 'anonymous'));
+        }
+
+        function toSaveString(str) {
+            str = str.replace(/</g, '&lt;');
+            str = str.replace(/>/g, '&gt;');
+            return str;
         }
 
         function renderCurrentResult(currentNumber, selector) {
