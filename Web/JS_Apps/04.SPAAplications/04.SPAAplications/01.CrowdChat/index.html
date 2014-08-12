@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Crowd Chat</title>
+    <link href="styles/styles.css" rel="stylesheet" />
+    <script src="scripts/libs/require.js" data-main="scripts/app"></script>
+</head>
+<body>
+    <form id="login">
+        <p>Input username to enter the chat:</p>
+        <input type="text" placeholder="Username"/>
+        <button id="sign-in">Sign in</button>
+    </form>
+    <div id="chat">
+        <h2>Crowd Chat</h2>
+        <div id="content"></div>
+        <input type="text" placeholder="Type message..." />
+        <button id="send">Send</button>
+    </div>
+    <script id="chat-template" type="text/x-handlebars-template">
+        <ul id="messages">
+            {{#posts}}
+            <li class="message-row">
+                <div class="username">{{{by}}}:</div>
+                <div class="message-text">{{{text}}}</div>
+            </li>
+            {{/posts}}
+        </ul>
+    </script>
+</body>
+</html>

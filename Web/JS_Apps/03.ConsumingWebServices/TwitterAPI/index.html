@@ -1,0 +1,18 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Twitter API</title>
+    <link href="styles.css" rel="stylesheet" />
+</head>
+<body>
+    <h1>CNN Tweets</h1>
+    <div id="twitter"></div>
+    <script src="twitterFetcher.js"></script>
+    <script>
+        /// <reference path="twitterFetcher.js"/>
+        (function () {
+            twitterFetcher.fetch('492837292474523648', 'twitter', 20, true, true, true);
+        }());
+    </script>
+</body>
+</html>

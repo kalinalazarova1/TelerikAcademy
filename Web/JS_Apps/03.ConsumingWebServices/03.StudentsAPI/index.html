@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Students API</title>
+    <script src="scripts/libs/require.js" data-main="scripts/app"></script>
+    <style>
+        table {
+            border-collapse: collapse;
+            margin: 30px;
+        }
+
+        td, th {
+            border: 1px solid black;
+            width: 100px;
+            padding: 5px;
+        }
+
+        th:first-child, td:first-child{
+            width: 20px;
+        }
+        fieldset{
+            width: 50%;
+        }
+    </style>
+
+</head>
+<body>
+    <h1>Students API</h1>
+    <form id="add-student">
+        <fieldset>
+            <legend>Student</legend>
+            <label for="">Name:</label>
+            <input id="name" type="text" />
+            <label for="">Grade:</label>
+            <input id="grade" type="text" />
+            <button id="add">Add</button>
+        </fieldset>
+    </form>
+    <script id="students-template" type="text/x-handlebars-template">
+        <table>
+            <thead>
+                <tr><th>Nr</th><th>Name</th><th>Grade</th><th>Action</th></tr>
+            </thead>
+            
+            <tbody id="students-table">
+                {{#students}}
+                <tr class="student-row">
+                    <td>{{increment @index}}</td>
+                    <td>{{name}}</td>
+                    <td>{{grade}}</td>
+                    <td><button data-id="{{id}}">Delete</button></td>
+                </tr>
+                {{/students}}
+            </tbody>
+        </table>
+    </script>
+    <div id="result"></div>
+</body>
+</html>

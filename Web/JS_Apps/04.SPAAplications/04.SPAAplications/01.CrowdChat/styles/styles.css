@@ -1,0 +1,89 @@
+﻿body {
+    font-family: 'Segoe UI';
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+}
+
+form#login{
+    border: 1px solid darkorange;
+    background-color: #fecd91;
+    opacity: 0.9;
+    position: absolute;
+    left: 480px;
+    top: 200px;
+    width: 240px;
+    height: 90px;
+    padding: 30px;
+    border-radius: 8px;
+    color: #333;
+}
+
+input, button{
+    padding-left: 7px;
+    border: 1px solid darkorange;
+    height: 25px;
+    border-radius: 8px;
+}
+
+button{
+    font-size: 14px;
+    height: 28px;
+    background-color: darkorange;
+    color: #fecd91;
+}
+
+div#chat{
+    border: 1px solid darkorange;
+    background-color: #fecd91;
+    opacity: 0.9;
+    position: absolute;
+    left: 450px;
+    top: 50px;
+    padding: 30px;
+    border-radius: 8px;
+}
+
+div#content{
+    height: 400px;
+    width: 390px;
+    border: 1px solid darkorange;
+    background-color: #ffffff;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    overflow-y: auto;
+    overflow-wrap: normal;
+    font-size: 12px;
+}
+
+#content div.username{
+    display: inline-block;
+    width: 100px;
+    text-align: left;
+    border-right: 1px solid gray;
+    overflow-wrap: break-word;
+}
+
+#content div.message-text{
+    display: inline-block;
+    width: 230px;
+    text-align: left;
+    overflow-wrap: break-word;
+}
+
+div#content .message-row{
+    border-bottom: 1px solid gray;
+}
+
+div#chat input{
+    width: 330px;
+}
+
+ul{
+    list-style: none;
+    -webkit-padding-start: 5px;
+}
+
+.hidden{
+    display: none;
+}
