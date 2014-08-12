@@ -1,0 +1,43 @@
+Design pattern: Simple Factory
+	* 
+
+Design pattern: Strategy
+Motherboard class
+VideoCard class
+and other
+
+Design pattern: Template Method
+	* 
+
+Design pattern: Abstract factory
+ComputerFactory class
+
+Design pattern: Composite
+	* 
+
+Design pattern: Mediator
+Motherboard class
+
+Found bottlenecks:
+ConsoleWriteLine is slow replaced it with StringBuilder
+No need for the do-while loop in Cpu class method Random
+
+Found bugs:
+Error printing after each command - fixed
+	* 
+	* 
+
+Single responsibility principle
+All classes do only what thier names says
+
+Open/closed principle
+IManufacurer 
+
+Liskov substitution principle
+
+
+Interface segregation principle
+IComputer, IServer, IPc, ILaptop
+
+Dependency inversion principle
+All classes receive in their constructor what they need 
