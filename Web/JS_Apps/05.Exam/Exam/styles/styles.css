@@ -1,0 +1,113 @@
+﻿body {
+    font-family: 'Segoe UI';
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+}
+
+aside{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+#login-wrapper, #register-wrapper, #logout-wrapper{
+    border: 1px solid darkorange;
+    background-color: #fecd91;
+    opacity: 0.9;
+    width: 240px;
+    height: 150px;
+    padding: 10px;
+    border-radius: 8px;
+    color: #333;
+    display: none;
+}
+
+input, button{
+    padding-left: 7px;
+    margin: 5px;
+    border: 1px solid darkorange;
+    height: 25px;
+    border-radius: 8px;
+}
+
+button{
+    font-size: 14px;
+    height: 28px;
+    background-color: darkorange;
+    color: #fecd91;
+}
+
+div#posts-wrapper{
+    border: 1px solid darkorange;
+    background-color: #fecd91;
+    opacity: 0.9;
+    position: absolute;
+    left: 450px;
+    top: 20px;
+    padding: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 8px;
+    font-size: 12px;
+}
+
+div#content{
+    height: 400px;
+    width: 390px;
+    border: 1px solid darkorange;
+    background-color: #ffffff;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    overflow-y: auto;
+    overflow-wrap: normal;
+    font-size: 12px;
+}
+
+
+div#content .posts-row{
+    border-bottom: 1px solid gray;
+}
+
+#post-body-input{
+    width: 230px;
+}
+
+#post-title-input{
+    width: 90px;
+}
+
+table{
+    border-collapse: collapse;
+}
+
+td{
+    border: 1px solid #ccc;
+    padding: 5px;
+}
+
+td.post-body{
+    width: 320px;
+}
+
+td.post-title{
+    width: 100px;
+}
+.hidden{
+    display: none;
+}
+
+div#sorter{
+    position: absolute;
+    left: 1000px;
+    top: 200px;
+    border: 1px solid darkorange;
+    background-color: #fecd91;
+    opacity: 0.9;
+    padding: 30px;
+    border-radius: 8px;
+}
+
+input#pages{
+    width: 30px;
+}

@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Crowd Share</title>
+    <link href="styles/styles.css" rel="stylesheet" />
+    <script src="scripts/libs/require.js" data-main="scripts/app"></script>
+</head>
+<body>
+    <aside>
+        <button id="main-register-btn">Register User</button>
+        <button id="main-login-btn">Login User</button>
+        <div id="register-wrapper">
+            <fieldset>
+                <legend>Register User</legend>
+                <input type="text" id="reg-username" placeholder="Username" />
+                <input type="password" id="reg-password" placeholder="Password" />
+                <button id="register-btn">Register</button><button class="cancel">Cancel</button>
+            </fieldset>
+        </div>
+        <div id="login-wrapper">
+            <fieldset>
+                <legend>Login User</legend> 
+                <input type="text" id="login-username" placeholder="Username" /> 
+                <input type="password" id="login-password" placeholder="Password" /> 
+                <button id="login-btn">Login</button>  <button class="cancel">Cancel</button>
+            </fieldset>
+        </div>
+        <div id="logout-wrapper">
+        </div>
+    </aside>
+    <section>
+        <div id="posts-wrapper">
+            <h2>Crowd Share</h2>
+            <div id="content"></div>
+            <input type="text" id="post-title-input" placeholder="Type title..." />
+            <input type="text" id="post-body-input" placeholder="Type message..." />
+            <button id="send">Send</button><br />
+            Posts per page:<input type="number" id="pages"/>
+            <button id="prev">Previous page</button>
+            <button id="next">Next page</button><br />
+            Filter: by user:<input id="user" type="text" /><br />
+            by pattern:<input id="pattern" type="text" />
+        </div>
+    </section>
+    <div id="sorter">
+        <fieldset>
+            <legend>Sort methods</legend>
+            <input type="radio" name="sort-method" value="ascending" checked="checked">Ascending<br>
+            <input type="radio" name="sort-method" value="descending">Descending<br />
+        </fieldset>
+        <fieldset>
+            <legend>Sort by</legend>
+            <input type="radio" name="sort-by" value="title" checked="checked">Title<br>
+            <input type="radio" name="sort-by" value="postDate">Post date<br />
+        </fieldset>
+    </div>
+    <script id="posts-template" type="text/x-handlebars-template">
+        <table>
+            {{#each posts}}
+            <tr class="post-row">
+                <td class="post-username">by {{{user.username}}}:</td>
+                <td class="post-body">
+                    <h5>{{{title}}}</h5>
+                    <p>{{{body}}}</p>
+                </td>
+            </tr>
+            {{/each}}
+        </table>
+    </script>
+</body>
+</html>
