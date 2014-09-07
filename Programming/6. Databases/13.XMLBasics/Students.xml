@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="Students.xslt" ?>
+<school xmlns="urn:school">
+  <!--2. Create XML document students.xml, which contains structured description of students. For each student you should 
+  enter information for his name, sex, birth date, phone, email, course, specialty, faculty number and a list of taken 
+  exams (exam name, tutor, score).
+  5. Add default namespace for the students "urn:students"-->
+  <student>
+    <name>Pesho Goshov</name>
+    <sex>male</sex>
+    <birth_date>23.08.1989</birth_date>
+    <phone>0889 123 456</phone>
+    <email>pesho@gmail.com</email>
+    <course>Databases</course>
+    <specialty>Web development</specialty>
+    <faculty_number>2390110876</faculty_number>
+    <enrollment>
+      <date>24.10.2013</date>
+      <score>92</score>
+    </enrollment>
+    <exams>
+      <exam>
+        <exam_name>HTML basics</exam_name>
+        <tutor>Hairy Harry</tutor>
+        <score>83</score>
+      </exam>
+      <exam>
+        <exam_name>Javascript basics</exam_name>
+        <tutor>Happy Hippo</tutor>
+        <score>73</score>
+      </exam>
+    </exams>
+  </student>
+  <student>
+    <name>Maria Ilieva</name>
+    <sex>female</sex>
+    <birth_date>03.02.1999</birth_date>
+    <phone>0889 111 456</phone>
+    <email>maria@gmail.com</email>
+    <course>Databases</course>
+    <specialty>Web development</specialty>
+    <faculty_number>2390110888</faculty_number>
+    <enrollment>
+      <date>24.10.2013</date>
+      <score>92</score>
+    </enrollment>
+    <exams>
+      <exam>
+        <exam_name>HTML basics</exam_name>
+        <tutor>Sara Vara</tutor>
+        <score>56</score>
+      </exam>
+      <exam>
+        <exam_name>Javascript basics</exam_name>
+        <tutor>Happy Hippo</tutor>
+        <score>76</score>
+      </exam>
+    </exams>
+  </student>
+  <student>
+    <name>Sasho Dashev</name>
+    <sex>male</sex>
+    <birth_date>13.01.1992</birth_date>
+    <phone>0889 123 457</phone>
+    <email>sasho@gmail.com</email>
+    <course>Databases</course>
+    <specialty>Web development</specialty>
+    <faculty_number>2390110878</faculty_number>
+    <enrollment>
+      <date>24.10.2013</date>
+      <score>92</score>
+    </enrollment>
+    <exams>
+      <exam>
+        <exam_name>HTML basics</exam_name>
+        <tutor>Hairy Harry</tutor>
+        <score>23</score>
+      </exam>
+      <exam>
+        <exam_name>Javascript basics</exam_name>
+        <tutor>Dude Dudev</tutor>
+        <score>53</score>
+      </exam>
+    </exams>
+  </student>
+</school>

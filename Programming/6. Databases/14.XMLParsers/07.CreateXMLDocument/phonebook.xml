@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<phonebook xmlns="urn:phonebook">
+  <person>
+    <name>Ivan Petrov</name>
+    <address>4000 Plovid bul.Tzar Boris III 35</address>
+    <phone>0887 655 445</phone>
+  </person>
+  <person>
+    <name>Hristo Venev</name>
+    <address>1000 Sofia ul.Saborna 2A</address>
+    <phone>0897 556 677</phone>
+  </person>
+  <person>
+    <name>Maria Peneva</name>
+    <address>1504 Sofia ul.Ekzarh Josif 76</address>
+    <phone>0888 888 888</phone>
+  </person>
+</phonebook>

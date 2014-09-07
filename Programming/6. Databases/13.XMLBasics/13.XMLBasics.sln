@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30501.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{25608C7E-EFB1-4B8F-9490-EF97FD3D8DCD}"
+	ProjectSection(SolutionItems) = preProject
+		Students.html = Students.html
+		Students.xml = Students.xml
+		Students.xsd = Students.xsd
+		Students.xslt = Students.xslt
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XslTransform", "XslTransform\XslTransform.csproj", "{A86587BD-2F23-4211-A6D1-6AFA52430A4C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A86587BD-2F23-4211-A6D1-6AFA52430A4C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A86587BD-2F23-4211-A6D1-6AFA52430A4C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A86587BD-2F23-4211-A6D1-6AFA52430A4C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A86587BD-2F23-4211-A6D1-6AFA52430A4C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A86587BD-2F23-4211-A6D1-6AFA52430A4C} = {25608C7E-EFB1-4B8F-9490-EF97FD3D8DCD}
+	EndGlobalSection
+EndGlobal

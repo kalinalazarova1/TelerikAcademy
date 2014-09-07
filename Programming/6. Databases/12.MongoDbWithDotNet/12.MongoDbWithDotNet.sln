@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30501.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MongoChat.Models", "MongoChat.Models\MongoChat.Models.csproj", "{8B39EEF0-4473-4F34-B656-38AC881087F7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mongo.Data", "Mongo.Data\Mongo.Data.csproj", "{A43C6939-04A3-47FF-BC6D-F9EE7135D44E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MongoChat.WPF", "MongoChat.WPF\MongoChat.WPF.csproj", "{8528C6C4-F862-442A-AA9E-F085B0FC8AB3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8B39EEF0-4473-4F34-B656-38AC881087F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B39EEF0-4473-4F34-B656-38AC881087F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B39EEF0-4473-4F34-B656-38AC881087F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B39EEF0-4473-4F34-B656-38AC881087F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A43C6939-04A3-47FF-BC6D-F9EE7135D44E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A43C6939-04A3-47FF-BC6D-F9EE7135D44E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A43C6939-04A3-47FF-BC6D-F9EE7135D44E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A43C6939-04A3-47FF-BC6D-F9EE7135D44E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8528C6C4-F862-442A-AA9E-F085B0FC8AB3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8528C6C4-F862-442A-AA9E-F085B0FC8AB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8528C6C4-F862-442A-AA9E-F085B0FC8AB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8528C6C4-F862-442A-AA9E-F085B0FC8AB3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

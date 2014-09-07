@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<catalogue>
+	<album>
+		<title>Pablo Honey</title>
+		<artist>Radiohead</artist>
+	</album>
+	<album>
+		<title>The Bends</title>
+		<artist>Radiohead</artist>
+	</album>
+	<album>
+		<title>Remixed and Unplugged in A minor</title>
+		<artist>Alicia Keys</artist>
+	</album>
+</catalogue>

@@ -1,0 +1,10 @@
+﻿<Window x:Class="MongoChat.WPF.ChatWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Mongo Chat" Height="352" Width="525">
+    <Grid>
+        <Button Margin="361,258,10,19" Click="OnSendButtonClick">Send</Button>
+        <TextBox Name="msgText" Margin="10,259,161,19"/>
+        <ListBox Name="chat" Margin="10,10,10,66"/>
+    </Grid>
+</Window>

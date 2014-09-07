@@ -1,0 +1,10 @@
+﻿<Window x:Class="MongoChat.WPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Mongo Chat" Height="350" Width="525">
+    <Grid>
+        <Label Width="100" Margin="82,101,335,183">Enter Username:</Label>
+        <Button Margin="401,101,50,183" Click="OnButtonLoginClick" >Login</Button>
+        <TextBox Name="username" Margin="196,101,133,183"/>
+    </Grid>
+</Window>

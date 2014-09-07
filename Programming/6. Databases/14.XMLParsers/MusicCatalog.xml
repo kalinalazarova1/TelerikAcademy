@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<catalogue>
+  <album>
+    <name>Pablo Honey</name>
+    <artist>Radiohead</artist>
+    <year>1993</year>
+    <producer>EMI</producer>
+    <price>12.00</price>
+    <songs>
+      <song>
+        <title>Creep</title>
+        <duration>3:55</duration>
+      </song>
+      <song>
+        <title>You</title>
+        <duration>3:27</duration>
+      </song>
+      <song>
+        <title>Anyone Can Play Guitar</title>
+        <duration>3:37</duration>
+      </song>
+    </songs>
+  </album>
+  <album>
+    <name>The Bends</name>
+    <artist>Radiohead</artist>
+    <year>1995</year>
+    <producer>EMI</producer>
+    <price>12.00</price>
+    <songs>
+      <song>
+        <title>My Iron Lung</title>
+        <duration>3:55</duration>
+      </song>
+      <song>
+        <title>High And Dry</title>
+        <duration>4:17</duration>
+      </song>
+      <song>
+        <title>The Bends</title>
+        <duration>4:06</duration>
+      </song>
+      <song>
+        <title>Street Spirit</title>
+        <duration>4:14</duration>
+      </song>
+    </songs>
+  </album>
+  <album>
+    <name>Remixed and Unplugged in A minor</name>
+    <artist>Alicia Keys</artist>
+    <year>2001</year>
+    <producer>Sony BMG</producer>
+    <price>14.00</price>
+    <songs>
+      <song>
+        <title>Fallin</title>
+        <duration>3:30</duration>
+      </song>
+      <song>
+        <title>A Woman's worth</title>
+        <duration>5:01</duration>
+      </song>
+      <song>
+        <title>Girlfriend</title>
+        <duration>3:35</duration>
+      </song>
+      <song>
+        <title>Piano and I</title>
+        <duration>1:51</duration>
+      </song>
+    </songs>
+  </album>
+</catalogue>
