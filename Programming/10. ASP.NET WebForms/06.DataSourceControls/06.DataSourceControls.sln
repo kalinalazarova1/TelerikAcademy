@@ -1,0 +1,53 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30723.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01.World.Data", "01.World\01.World.Data.csproj", "{D7FEAA3A-1ECE-4E61-87DD-5E357B3AD75D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02.World.WebForms", "02.World.WebForms\02.World.WebForms.csproj", "{7ABD519A-0C88-43BD-8A2A-0CEDFCE28161}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04.TodoList", "TodoList\04.TodoList.csproj", "{E76A0109-47D9-4C1E-B1B1-2A28348A6558}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03.Todo.Models", "03.Todo.Models\03.Todo.Models.csproj", "{02D574E5-2770-4252-9B07-1871B7B2F8B6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05.Todo.Data", "05.Todo.Data\05.Todo.Data.csproj", "{0AAEA4D1-7C13-49A6-8CB5-E7E884E1E5BA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{59C880BF-A606-4578-A7D3-BE79895C7B8C}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D7FEAA3A-1ECE-4E61-87DD-5E357B3AD75D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7FEAA3A-1ECE-4E61-87DD-5E357B3AD75D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D7FEAA3A-1ECE-4E61-87DD-5E357B3AD75D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D7FEAA3A-1ECE-4E61-87DD-5E357B3AD75D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7ABD519A-0C88-43BD-8A2A-0CEDFCE28161}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7ABD519A-0C88-43BD-8A2A-0CEDFCE28161}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7ABD519A-0C88-43BD-8A2A-0CEDFCE28161}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7ABD519A-0C88-43BD-8A2A-0CEDFCE28161}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E76A0109-47D9-4C1E-B1B1-2A28348A6558}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E76A0109-47D9-4C1E-B1B1-2A28348A6558}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E76A0109-47D9-4C1E-B1B1-2A28348A6558}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E76A0109-47D9-4C1E-B1B1-2A28348A6558}.Release|Any CPU.Build.0 = Release|Any CPU
+		{02D574E5-2770-4252-9B07-1871B7B2F8B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{02D574E5-2770-4252-9B07-1871B7B2F8B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{02D574E5-2770-4252-9B07-1871B7B2F8B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{02D574E5-2770-4252-9B07-1871B7B2F8B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0AAEA4D1-7C13-49A6-8CB5-E7E884E1E5BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0AAEA4D1-7C13-49A6-8CB5-E7E884E1E5BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0AAEA4D1-7C13-49A6-8CB5-E7E884E1E5BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0AAEA4D1-7C13-49A6-8CB5-E7E884E1E5BA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

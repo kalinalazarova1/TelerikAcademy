@@ -1,0 +1,27 @@
+﻿<%@ Master Language="C#" %>
+
+<!DOCTYPE html>
+
+<html>
+
+<head runat="server">
+    <title>International Company Inc</title>
+    <link href="Site.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <header>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolderHeader" runat="server">
+        </asp:ContentPlaceHolder>
+        <div>International Company Inc Web Site</div>
+    </header>
+
+    <form id="FormMain" runat="server">
+        <asp:ContentPlaceHolder ID="ContentPlaceHolderPageContent" runat="server">
+        </asp:ContentPlaceHolder>
+    </form>
+
+    <footer>&copy;2014 – International Company Inc</footer>
+</body>
+
+</html>

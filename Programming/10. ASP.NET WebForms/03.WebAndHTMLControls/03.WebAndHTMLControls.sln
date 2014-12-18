@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30723.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01.HTMLServerControls", "01.HTMLControls\01.HTMLServerControls.csproj", "{17979514-A576-4FD2-9FF3-ADBD841E8D4D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02.WebServerControls", "02.WebServerControls\02.WebServerControls.csproj", "{FB2B7D45-5C47-42AA-9CFB-105A802B8F33}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03.HTMLEscaping", "03.HTMLEscaping\03.HTMLEscaping.csproj", "{631E71E5-826F-4D6A-AD41-9DD4B44391A3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04.RegistrationForm", "04.RegistrationForm\04.RegistrationForm.csproj", "{AD58A216-5F6C-427E-9179-81CE00816B9C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "06.Calculator", "06.Calculator\06.Calculator.csproj", "{D2EE8C61-4B73-4C90-B8F2-D323EA806973}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05.TicTacToe", "05.TicTacToe\05.TicTacToe.csproj", "{12526DF5-CF15-4EC4-A94A-155A3D708ADA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{17979514-A576-4FD2-9FF3-ADBD841E8D4D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17979514-A576-4FD2-9FF3-ADBD841E8D4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17979514-A576-4FD2-9FF3-ADBD841E8D4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17979514-A576-4FD2-9FF3-ADBD841E8D4D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB2B7D45-5C47-42AA-9CFB-105A802B8F33}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB2B7D45-5C47-42AA-9CFB-105A802B8F33}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB2B7D45-5C47-42AA-9CFB-105A802B8F33}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB2B7D45-5C47-42AA-9CFB-105A802B8F33}.Release|Any CPU.Build.0 = Release|Any CPU
+		{631E71E5-826F-4D6A-AD41-9DD4B44391A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{631E71E5-826F-4D6A-AD41-9DD4B44391A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{631E71E5-826F-4D6A-AD41-9DD4B44391A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{631E71E5-826F-4D6A-AD41-9DD4B44391A3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AD58A216-5F6C-427E-9179-81CE00816B9C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD58A216-5F6C-427E-9179-81CE00816B9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD58A216-5F6C-427E-9179-81CE00816B9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD58A216-5F6C-427E-9179-81CE00816B9C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D2EE8C61-4B73-4C90-B8F2-D323EA806973}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2EE8C61-4B73-4C90-B8F2-D323EA806973}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2EE8C61-4B73-4C90-B8F2-D323EA806973}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2EE8C61-4B73-4C90-B8F2-D323EA806973}.Release|Any CPU.Build.0 = Release|Any CPU
+		{12526DF5-CF15-4EC4-A94A-155A3D708ADA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{12526DF5-CF15-4EC4-A94A-155A3D708ADA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{12526DF5-CF15-4EC4-A94A-155A3D708ADA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{12526DF5-CF15-4EC4-A94A-155A3D708ADA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,30 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="_01.PersonalSite.Site" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <link href="Site.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="Head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <header>
+        <h1>My Boring Site</h1>
+    </header>
+    <aside class="main-nav">
+        <ul>
+            <li><a href="Profile.aspx">Profile</a></li>
+            <li><a href="Friends.aspx">Friends</a></li>
+            <li><a href="Info.aspx">Additional Info</a></li>
+        </ul>
+    </aside>
+    <div id="wrapper">
+    <form id="form1" runat="server">
+        <asp:ContentPlaceHolder ID="MainContent" runat="server"></asp:ContentPlaceHolder>
+    </form>
+        </div>
+    <footer>Copywrite Telerik Academy &copy;2014</footer>
+</body>
+</html>

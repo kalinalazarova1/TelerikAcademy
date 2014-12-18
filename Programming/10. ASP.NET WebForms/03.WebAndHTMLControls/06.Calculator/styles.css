@@ -1,0 +1,25 @@
+﻿table{
+    border: 1px solid gray;
+}
+
+td{
+    border: 1px solid gray;
+    text-align: center;
+}
+
+.btn {
+    width: 40px;
+}
+
+.equals{
+    width: 100px;
+    left: 30px;
+}
+
+.screen{
+    display: block;
+    width: 170px;
+    height: 20px;
+    text-align: right;
+    padding: 5px;
+}

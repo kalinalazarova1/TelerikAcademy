@@ -1,0 +1,11 @@
+﻿a{
+    font-family: Arial;
+    text-decoration: none;
+    color: white;
+    display: block;
+    padding: 5px;
+}
+
+a:hover{
+    background-color:royalblue;
+}

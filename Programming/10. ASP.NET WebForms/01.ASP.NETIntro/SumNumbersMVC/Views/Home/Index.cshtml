@@ -1,0 +1,23 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>ASP.NET</h1>
+    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
+    <p><a href="http://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Sum Two Numbers</h2>
+        <form action="/Home/AddNumbers" >
+            <label for="first">First number: </label>
+            <input type="number" id="first" name="first" value=@ViewBag.first />
+            <label for="second">Second number: </label>
+            <input type="number" id="second" name="second" value=@ViewBag.second />
+            <input type="submit" value="Sum" />
+        </form>
+        <span>Result: @ViewBag.Sum</span>
+    </div>
+</div>
